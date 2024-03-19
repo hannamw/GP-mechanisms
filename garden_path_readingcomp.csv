@@ -1,145 +1,145 @@
-condition,ambiguous,Sentence,Comp_Question
-NPS_UAMB,True,The suspect showed the file deserved further investigation during the murder trial.,Did the suspect show the file?
-NPZ_UAMB,True,Because the suspect changed the file deserved further investigation during the jury discussions.,Did the suspect change the file?
-MVRR_UAMB,True,The suspect sent the file deserved further investigation given the new evidence.,Did the suspect send the file?
-NPS_UAMB,True,The corrupt politician mentioned the bill received unwelcome attention from southern voters.,Did the corrupt politician mention the bill?
-NPZ_UAMB,True,After the corrupt politician signed the bill received unwelcome attention from southern voters.,Did the corrupt politician sign the bill?
-MVRR_UAMB,True,The corrupt politician handed the bill received unwelcome attention from southern voters.,Did the corrupt politician hand the bill?
-NPS_UAMB,True,The woman maintained the mail disappeared mysteriously from her front porch.,Did the woman maintain the mail?
-NPZ_UAMB,True,After the woman moved the mail disappeared mysteriously from the delivery system.,Did the woman move the mail?
-MVRR_UAMB,True,The woman brought the mail disappeared mysteriously after reading the bad news in it.,Did the woman bring the mail?
-NPS_UAMB,True,The boy found the chicken stayed surprisingly happy in the new barn.,Did the boy find the chicken?
-NPZ_UAMB,True,Although the boy attacked the chicken stayed surprisingly happy as if nothing happened.,Did the boy attack the chicken?
-MVRR_UAMB,True,The boy fed the chicken stayed surprisingly happy despite having a mild allergic reaction.,Did the boy feed the chicken?
-NPS_UAMB,True,The new doctor demonstrated the operation appeared increasingly likely to succeed.,Did the new doctor demonstrate the operation?
-NPZ_UAMB,True,After the new doctor left the operation appeared increasingly likely to succeed.,Did the new doctor leave the operation?
-MVRR_UAMB,True,The new doctor offered the operation appeared increasingly likely to succeed in her career.,Did the new doctor offer the operation?
-NPS_UAMB,True,The professor noticed the grant gained more attention from marine biologists.,Did the professor notice the grant?
-NPZ_UAMB,True,After the professor read the grant gained more attention due to her excellent description.,Did the professor read the grant?
-MVRR_UAMB,True,The professor awarded the grant gained more attention from marine biologists.,Did the professor award the grant?
-NPS_UAMB,True,The technician reported the service stopped working almost immediately after the storm started.,Did the technician report the service?
-NPZ_UAMB,True,After the technician called the service stopped working almost immediately to his surprise.,Did the technician call the service?
-MVRR_UAMB,True,The technician refused the service stopped working almost immediately after the argument.,Did the technician refuse the service?
-NPS_UAMB,True,The mechanic observed the truck needed several more hours to be repaired.,Did the mechanic observe the truck?
-NPZ_UAMB,True,Because the mechanic stopped the truck needed several more hours before it could be fully repaired.,Did the mechanic stop the truck?
-MVRR_UAMB,True,The mechanic brought the truck needed several more hours to fully repair it.,Did the mechanic bring the truck?
-NPS_UAMB,True,The guitarist knew the song failed dramatically because of the tensions within the band.,Did the guitarist know the song?
-NPZ_UAMB,True,After the guitarist began the song failed dramatically because he skipped the sound check.,Did the guitarist begin the song?
-MVRR_UAMB,True,The guitarist assigned the song failed dramatically because he never practiced enough.,Did the guitarist assign the song?
-NPS_UAMB,True,The player revealed the bonus remained essentially the same as in the original contract.,Did the player reveal the bonus?
-NPZ_UAMB,True,Although the player lost the bonus remained essentially the same as in the original contract.,Did the player lose the bonus?
-MVRR_UAMB,True,The player paid the bonus remained essentially the same despite his sudden fame and wealth.,Did the player pay the bonus?
-NPS_UAMB,True,The recent hire claimed the job prepared many students for careers in media.,Did the recent hire claim the job?
-NPZ_UAMB,True,Once the recent hire started the job prepared many students for careers in media.,Did the recent hire start the job?
-MVRR_UAMB,True,The recent hire offered the job prepared many students for careers in media.,Did the recent hire offer the job?
-NPS_UAMB,True,The assistant manager discovered the training seemed unnecessarily demanding for new staff.,Did the assistant manager discover the training?
-NPZ_UAMB,True,While the assistant manager worked the training seemed unnecessarily demanding to him.,Did the assistant manager work the training?
-MVRR_UAMB,True,The assistant manager assigned the training seemed unnecessarily demanding to new staff.,Did the assistant manager assign the training?
-NPS_UAMB,True,The mayor showed the document provided sufficient evidence to prove her innocence.,Did the mayor show the document?
-NPZ_UAMB,True,Although the mayor changed the document provided sufficient evidence for what he had promised.,Did the mayor change the document?
-MVRR_UAMB,True,The mayor sent the document provided sufficient evidence that it was simply blackmail.,Did the mayor send the document?
-NPS_UAMB,True,The basketball player mentioned the contract created another controversy in the NBA.,Did the basketball player mention the contract?
-NPZ_UAMB,True,After the basketball player signed the contract created another controversy in the NBA.,Did the basketball player sign the contract?
-MVRR_UAMB,True,The basketball player handed the contract created another controversy in the NBA.,Did the basketball player hand the contract?
-NPS_UAMB,True,The engineer maintained the equipment required constant supervision from senior technicians.,Did the engineer maintain the equipment?
-NPZ_UAMB,True,After the engineer moved the equipment required constant supervision from senior technicians.,Did the engineer move the equipment?
-MVRR_UAMB,True,The engineer brought the equipment required constant supervision from senior technicians.,Did the engineer bring the equipment?
-NPS_UAMB,True,The little girl found the lamb remained relatively calm despite the absence of its mother.,Did the little girl find the lamb?
-NPZ_UAMB,True,When the little girl attacked the lamb remained relatively calm despite the sudden assault.,Did the little girl attack the lamb?
-MVRR_UAMB,True,The little girl fed the lamb remained relatively calm despite having asked for beef.,Did the little girl feed the lamb?
-NPS_UAMB,True,The yoga instructor demonstrated the position demanded immense physical effort from everyone.,Did the yoga instructor demonstrate the position?
-NPZ_UAMB,True,Before the yoga instructor left the position demanded immense physical effort from everyone.,Did the yoga instructor leave the position?
-MVRR_UAMB,True,The yoga instructor offered the position demanded immense physical effort from everyone.,Did the yoga instructor offer the position?
-NPS_UAMB,True,The governor noticed the contract received sweeping support across the entire state.,Did the governor notice the contract?
-NPZ_UAMB,True,While the governor read the contract received sweeping support from the audience at the rally.,Did the governor read the contract?
-MVRR_UAMB,True,The governor awarded the contract received sweeping support across the entire state.,Did the governor award the contract?
-NPS_UAMB,True,The patient reported the treatment continued causing uncomfortable side effects like nausea.,Did the patient report the treatment?
-NPZ_UAMB,True,Before the patient called the treatment continued causing uncomfortable side effects like nausea.,Did the patient call the treatment?
-MVRR_UAMB,True,The patient refused the treatment continued causing uncomfortable scenes in the ER.,Did the patient refuse the treatment?
-NPS_UAMB,True,The operator observed the machine started working efficiently all of a sudden.,Did the operator observe the machine?
-NPZ_UAMB,True,Once the operator stopped the machine started working efficiently without any supervision.,Did the operator stop the machine?
-MVRR_UAMB,True,The operator brought the machine started working efficiently with the added automation.,Did the operator bring the machine?
-NPS_UAMB,True,The dancer knew the ballet achieved incredible success for a small local production.,Did the dancer know the ballet?
-NPZ_UAMB,True,Once the dancer began the ballet achieved incredible success for a show with a new performer.,Did the dancer begin the ballet?
-MVRR_UAMB,True,The dancer assigned the ballet achieved incredible success for a new performer.,Did the dancer assign the ballet?
-NPS_UAMB,True,The contestant revealed the money became unavailable to him when the show's budget shrank.,Did the contestant reveal the money?
-NPZ_UAMB,True,After the contestant lost the money became unavailable despite his previous three wins in a row.,Did the contestant lose the money?
-MVRR_UAMB,True,The contestant paid the money became unavailable and suddenly terminated his contract.,Did the contestant pay the money?
-NPS_UAMB,True,The new chef claimed the restaurant separated mediocre cooks from gifted ones.,Did the new chef claim the restaurant?
-NPZ_UAMB,True,Once the new chef started the restaurant separated mediocre cooks from gifted ones.,Did the new chef start the restaurant?
-MVRR_UAMB,True,The new chef offered the restaurant separated mediocre cooks from gifted ones.,Did the new chef offer the restaurant?
-NPS_UAMB,True,The apprentice baker discovered the oven produced smaller cakes because it heated too fast.,Did the apprentice baker discover the oven?
-NPZ_UAMB,True,When the apprentice baker worked the oven produced smaller cakes because he lacked experience.,Did the apprentice baker work the oven?
-MVRR_UAMB,True,The apprentice baker assigned the oven produced smaller cakes because he lacked experience.,Did the apprentice baker assign the oven?
-NPS_UAMB,False,The suspect showed that the file deserved further investigation during the murder trial.,Did the suspect show the file?
-NPZ_UAMB,False,"Because the suspect changed, the file deserved further investigation during the jury discussions.",Did the suspect change the file?
-MVRR_UAMB,False,The suspect who was sent the file deserved further investigation given the new evidence.,Did the suspect send the file?
-NPS_UAMB,False,The corrupt politician mentioned that the bill received unwelcome attention from southern voters.,Did the corrupt politician mention the bill?
-NPZ_UAMB,False,"After the corrupt politician signed, the bill received unwelcome attention from southern voters.",Did the corrupt politician sign the bill?
-MVRR_UAMB,False,The corrupt politician who was handed the bill received unwelcome attention from southern voters.,Did the corrupt politician hand the bill?
-NPS_UAMB,False,The woman maintained that the mail disappeared mysteriously from her front porch.,Did the woman maintain the mail?
-NPZ_UAMB,False,"After the woman moved, the mail disappeared mysteriously from the delivery system.",Did the woman move the mail?
-MVRR_UAMB,False,The woman who was brought the mail disappeared mysteriously after reading the bad news in it.,Did the woman bring the mail?
-NPS_UAMB,False,The boy found that the chicken stayed surprisingly happy in the new barn.,Did the boy find the chicken?
-NPZ_UAMB,False,"Although the boy attacked, the chicken stayed surprisingly happy as if nothing happened.",Did the boy attack the chicken?
-MVRR_UAMB,False,The boy who was fed the chicken stayed surprisingly happy despite having a mild allergic reaction.,Did the boy feed the chicken?
-NPS_UAMB,False,The new doctor demonstrated that the operation appeared increasingly likely to succeed.,Did the new doctor demonstrate the operation?
-NPZ_UAMB,False,"After the new doctor left, the operation appeared increasingly likely to succeed.",Did the new doctor leave the operation?
-MVRR_UAMB,False,The new doctor who was offered the operation appeared increasingly likely to succeed in her career.,Did the new doctor offer the operation?
-NPS_UAMB,False,The professor noticed that the grant gained more attention from marine biologists.,Did the professor notice the grant?
-NPZ_UAMB,False,"After the professor read, the grant gained more attention due to her excellent description.",Did the professor read the grant?
-MVRR_UAMB,False,The professor who was awarded the grant gained more attention from marine biologists.,Did the professor award the grant?
-NPS_UAMB,False,The technician reported that the service stopped working almost immediately after the storm started.,Did the technician report the service?
-NPZ_UAMB,False,"After the technician called, the service stopped working almost immediately to his surprise.",Did the technician call the service?
-MVRR_UAMB,False,The technician who was refused the service stopped working almost immediately after the argument.,Did the technician refuse the service?
-NPS_UAMB,False,The mechanic observed that the truck needed several more hours to be repaired.,Did the mechanic observe the truck?
-NPZ_UAMB,False,"Because the mechanic stopped, the truck needed several more hours before it could be fully repaired.",Did the mechanic stop the truck?
-MVRR_UAMB,False,The mechanic who was brought the truck needed several more hours to fully repair it.,Did the mechanic bring the truck?
-NPS_UAMB,False,The guitarist knew that the song failed dramatically because of the tensions within the band.,Did the guitarist know the song?
-NPZ_UAMB,False,"After the guitarist began, the song failed dramatically because he skipped the sound check.",Did the guitarist begin the song?
-MVRR_UAMB,False,The guitarist who was assigned the song failed dramatically because he never practiced enough.,Did the guitarist assign the song?
-NPS_UAMB,False,The player revealed that the bonus remained essentially the same as in the original contract.,Did the player reveal the bonus?
-NPZ_UAMB,False,"Although the player lost, the bonus remained essentially the same as in the original contract.",Did the player lose the bonus?
-MVRR_UAMB,False,The player who was paid the bonus remained essentially the same despite his sudden fame and wealth.,Did the player pay the bonus?
-NPS_UAMB,False,The recent hire claimed that the job prepared many students for careers in media.,Did the recent hire claim the job?
-NPZ_UAMB,False,"Once the recent hire started, the job prepared many students for careers in media.",Did the recent hire start the job?
-MVRR_UAMB,False,The recent hire who was offered the job prepared many students for careers in media.,Did the recent hire offer the job?
-NPS_UAMB,False,The assistant manager discovered that the training seemed unnecessarily demanding for new staff.,Did the assistant manager discover the training?
-NPZ_UAMB,False,"While the assistant manager worked, the training seemed unnecessarily demanding to him.",Did the assistant manager work the training?
-MVRR_UAMB,False,The assistant manager who was assigned the training seemed unnecessarily demanding to new staff.,Did the assistant manager assign the training?
-NPS_UAMB,False,The mayor showed that the document provided sufficient evidence to prove her innocence.,Did the mayor show the document?
-NPZ_UAMB,False,"Although the mayor changed, the document provided sufficient evidence for what he had promised.",Did the mayor change the document?
-MVRR_UAMB,False,The mayor who was sent the document provided sufficient evidence that it was simply blackmail.,Did the mayor send the document?
-NPS_UAMB,False,The basketball player mentioned that the contract created another controversy in the NBA.,Did the basketball player mention the contract?
-NPZ_UAMB,False,"After the basketball player signed, the contract created another political controversy in the NBA.",Did the basketball player sign the contract?
-MVRR_UAMB,False,The basketball player who was handed the contract created another controversy in the NBA.,Did the basketball player hand the contract?
-NPS_UAMB,False,The engineer maintained that the equipment required constant supervision from senior technicians.,Did the engineer maintain the equipment?
-NPZ_UAMB,False,"After the engineer moved, the equipment required constant supervision from senior technicians.",Did the engineer move the equipment?
-MVRR_UAMB,False,The engineer who was brought the equipment required constant supervision from senior technicians.,Did the engineer bring the equipment?
-NPS_UAMB,False,The little girl found that the lamb remained relatively calm despite the absence of its mother.,Did the little girl find the lamb?
-NPZ_UAMB,False,"When the little girl attacked, the lamb remained relatively calm despite the sudden assault.",Did the little girl attack the lamb?
-MVRR_UAMB,False,The little girl who was fed the lamb remained relatively calm despite having asked for beef.,Did the little girl feed the lamb?
-NPS_UAMB,False,The yoga instructor demonstrated that the position demanded immense physical effort from everyone.,Did the yoga instructor demonstrate the position?
-NPZ_UAMB,False,"Before the yoga instructor left, the position demanded immense physical effort from everyone.",Did the yoga instructor leave the position?
-MVRR_UAMB,False,The yoga instructor who was offered the position demanded immense physical effort from everyone.,Did the yoga instructor offer the position?
-NPS_UAMB,False,The governor noticed that the contract received sweeping support across the entire state.,Did the governor notice the contract?
-NPZ_UAMB,False,"While the governor read, the contract received sweeping support from the audience at the rally.",Did the governor read the contract?
-MVRR_UAMB,False,The governor who was awarded the contract received sweeping support across the entire state.,Did the governor award the contract?
-NPS_UAMB,False,The patient reported that the treatment continued causing uncomfortable side effects like nausea.,Did the patient report the treatment?
-NPZ_UAMB,False,"Before the patient called, the treatment continued causing uncomfortable side effects like nausea.",Did the patient call the treatment?
-MVRR_UAMB,False,The patient who was refused the treatment continued causing uncomfortable scenes in the ER.,Did the patient refuse the treatment?
-NPS_UAMB,False,The operator observed that the machine started working efficiently all of a sudden.,Did the operator observe the machine?
-NPZ_UAMB,False,"Once the operator stopped, the machine started working efficiently without any supervision.",Did the operator stop the machine?
-MVRR_UAMB,False,The operator who was brought the machine started working efficiently with the added automation.,Did the operator bring the machine?
-NPS_UAMB,False,The dancer knew that the ballet achieved incredible success for a small local production.,Did the dancer know the ballet?
-NPZ_UAMB,False,"Once the dancer began, the ballet achieved incredible success for a show with a new performer.",Did the dancer begin the ballet?
-MVRR_UAMB,False,The dancer who was assigned the ballet achieved incredible success for a new performer.,Did the dancer assign the ballet?
-NPS_UAMB,False,The contestant revealed that the money became unavailable to him when the show's budget shrank.,Did the contestant reveal the money?
-NPZ_UAMB,False,"After the contestant lost, the money became unavailable despite his previous three wins in a row.",Did the contestant lose the money?
-MVRR_UAMB,False,The contestant who was paid the money became unavailable and suddenly terminated his contract.,Did the contestant pay the money?
-NPS_UAMB,False,The new chef claimed that the restaurant separated mediocre cooks from gifted ones.,Did the new chef claim the restaurant?
-NPZ_UAMB,False,"Once the new chef started, the restaurant separated mediocre cooks from gifted ones.",Did the new chef start the restaurant?
-MVRR_UAMB,False,The new chef who was offered the restaurant separated mediocre cooks from gifted ones.,Did the new chef offer the restaurant?
-NPS_UAMB,False,The apprentice baker discovered that the oven produced smaller cakes because it heated too fast.,Did the apprentice baker discover the oven?
-NPZ_UAMB,False,"When the apprentice baker worked, the oven produced smaller cakes because he lacked experience.",Did the apprentice baker work the oven?
-MVRR_UAMB,False,The apprentice baker who was assigned the oven produced smaller cakes because he lacked experience.,Did the apprentice baker assign the oven?
+condition,ambiguous,Sentence,Comp_Question_No,Comp_Question_Yes
+NPS_UAMB,True,The suspect showed the file deserved further investigation during the murder trial.,Did the suspect show the file?,Did the file deserve further investigation during the murder trial?
+NPZ_UAMB,True,Because the suspect changed the file deserved further investigation during the jury discussions.,Did the suspect change the file?,Did the file deserve further investigation during the jury discussions?
+MVRR_UAMB,True,The suspect sent the file deserved further investigation given the new evidence.,Did the suspect send the file?,Did the suspect deserve further investigation given the new evidence?
+NPS_UAMB,True,The corrupt politician mentioned the bill received unwelcome attention from southern voters.,Did the corrupt politician mention the bill?,Did the bill receive unwelcome attention from southern voters?
+NPZ_UAMB,True,After the corrupt politician signed the bill received unwelcome attention from southern voters.,Did the corrupt politician sign the bill?,Did the bill receive unwelcome attention from southern voters?
+MVRR_UAMB,True,The corrupt politician handed the bill received unwelcome attention from southern voters.,Did the corrupt politician hand the bill?,Did the corrupt politician receive unwelcome attention from southern voters?
+NPS_UAMB,True,The woman maintained the mail disappeared mysteriously from her front porch.,Did the woman maintain the mail?,Did the mail disappear mysteriously from her front porch?
+NPZ_UAMB,True,After the woman moved the mail disappeared mysteriously from the delivery system.,Did the woman move the mail?,Did the mail disappear mysteriously from the delivery system?
+MVRR_UAMB,True,The woman brought the mail disappeared mysteriously after reading the bad news in it.,Did the woman bring the mail?,Did the woman disappear mysteriously after reading the bad news in it?
+NPS_UAMB,True,The boy found the chicken stayed surprisingly happy in the new barn.,Did the boy find the chicken?,Did the chicken stay surprisingly happy in the new barn?
+NPZ_UAMB,True,Although the boy attacked the chicken stayed surprisingly happy as if nothing happened.,Did the boy attack the chicken?,Did the chicken stay surprisingly happy as if nothing happened?
+MVRR_UAMB,True,The boy fed the chicken stayed surprisingly happy despite having a mild allergic reaction.,Did the boy feed the chicken?,Did the boy stay surprisingly happy despite having a mild allergic reaction?
+NPS_UAMB,True,The new doctor demonstrated the operation appeared increasingly likely to succeed.,Did the new doctor demonstrate the operation?,Did the operation appear increasingly likely to succeed?
+NPZ_UAMB,True,After the new doctor left the operation appeared increasingly likely to succeed.,Did the new doctor leave the operation?,Did the operation appear increasingly likely to succeed?
+MVRR_UAMB,True,The new doctor offered the operation appeared increasingly likely to succeed in her career.,Did the new doctor offer the operation?,Did the new doctor appear increasingly likely to succeed in her career?
+NPS_UAMB,True,The professor noticed the grant gained more attention from marine biologists.,Did the professor notice the grant?,Did the grant gain more attention from marine biologists?
+NPZ_UAMB,True,After the professor read the grant gained more attention due to her excellent description.,Did the professor read the grant?,Did the grant gain more attention due to her excellent description?
+MVRR_UAMB,True,The professor awarded the grant gained more attention from marine biologists.,Did the professor award the grant?,Did the professor gain more attention from marine biologists?
+NPS_UAMB,True,The technician reported the service stopped working almost immediately after the storm started.,Did the technician report the service?,Did the service stop working almost immediately after the storm started?
+NPZ_UAMB,True,After the technician called the service stopped working almost immediately to his surprise.,Did the technician call the service?,Did the service stop working almost immediately to his surprise?
+MVRR_UAMB,True,The technician refused the service stopped working almost immediately after the argument.,Did the technician refuse the service?,Did the technician stop working almost immediately after the argument?
+NPS_UAMB,True,The mechanic observed the truck needed several more hours to be repaired.,Did the mechanic observe the truck?,Did the truck need several more hours to be repaired?
+NPZ_UAMB,True,Because the mechanic stopped the truck needed several more hours before it could be fully repaired.,Did the mechanic stop the truck?,Did the truck need several more hours before it could be fully repaired?
+MVRR_UAMB,True,The mechanic brought the truck needed several more hours to fully repair it.,Did the mechanic bring the truck?,Did the mechanic need several more hours to fully repair it?
+NPS_UAMB,True,The guitarist knew the song failed dramatically because of the tensions within the band.,Did the guitarist know the song?,Did the song fail dramatically because of the tensions within the band?
+NPZ_UAMB,True,After the guitarist began the song failed dramatically because he skipped the sound check.,Did the guitarist begin the song?,Did the song fail dramatically because he skipped the sound check?
+MVRR_UAMB,True,The guitarist assigned the song failed dramatically because he never practiced enough.,Did the guitarist assign the song?,Did the guitarist fail dramatically because he never practiced enough?
+NPS_UAMB,True,The player revealed the bonus remained essentially the same as in the original contract.,Did the player reveal the bonus?,Did the bonus remain essentially the same as in the original contract?
+NPZ_UAMB,True,Although the player lost the bonus remained essentially the same as in the original contract.,Did the player lose the bonus?,Did the bonus remain essentially the same as in the original contract?
+MVRR_UAMB,True,The player paid the bonus remained essentially the same despite his sudden fame and wealth.,Did the player pay the bonus?,Did the player remain essentially the same despite his sudden fame and wealth?
+NPS_UAMB,True,The recent hire claimed the job prepared many students for careers in media.,Did the recent hire claim the job?,Did the job prepare many students for careers in media?
+NPZ_UAMB,True,Once the recent hire started the job prepared many students for careers in media.,Did the recent hire start the job?,Did the job prepare many students for careers in media?
+MVRR_UAMB,True,The recent hire offered the job prepared many students for careers in media.,Did the recent hire offer the job?,Did the recent hire prepare many students for careers in media?
+NPS_UAMB,True,The assistant manager discovered the training seemed unnecessarily demanding for new staff.,Did the assistant manager discover the training?,Did the training seem unnecessarily demanding for new staff?
+NPZ_UAMB,True,While the assistant manager worked the training seemed unnecessarily demanding to him.,Did the assistant manager work the training?,Did the training seem unnecessarily demanding to him?
+MVRR_UAMB,True,The assistant manager assigned the training seemed unnecessarily demanding to new staff.,Did the assistant manager assign the training?,Did the assistant manager seem unnecessarily demanding to new staff?
+NPS_UAMB,True,The mayor showed the document provided sufficient evidence to prove her innocence.,Did the mayor show the document?,Did the document provide sufficient evidence to prove her innocence?
+NPZ_UAMB,True,Although the mayor changed the document provided sufficient evidence for what he had promised.,Did the mayor change the document?,Did the document provide sufficient evidence for what he had promised?
+MVRR_UAMB,True,The mayor sent the document provided sufficient evidence that it was simply blackmail.,Did the mayor send the document?,Did the mayor provide sufficient evidence that it was simply blackmail?
+NPS_UAMB,True,The basketball player mentioned the contract created another controversy in the NBA.,Did the basketball player mention the contract?,Did the contract create another controversy in the NBA?
+NPZ_UAMB,True,After the basketball player signed the contract created another controversy in the NBA.,Did the basketball player sign the contract?,Did the contract create another controversy in the NBA?
+MVRR_UAMB,True,The basketball player handed the contract created another controversy in the NBA.,Did the basketball player hand the contract?,Did the basketball player create another controversy in the NBA?
+NPS_UAMB,True,The engineer maintained the equipment required constant supervision from senior technicians.,Did the engineer maintain the equipment?,Did the equipment require constant supervision from senior technicians?
+NPZ_UAMB,True,After the engineer moved the equipment required constant supervision from senior technicians.,Did the engineer move the equipment?,Did the equipment require constant supervision from senior technicians?
+MVRR_UAMB,True,The engineer brought the equipment required constant supervision from senior technicians.,Did the engineer bring the equipment?,Did the engineer require constant supervision from senior technicians?
+NPS_UAMB,True,The little girl found the lamb remained relatively calm despite the absence of its mother.,Did the little girl find the lamb?,Did the lamb remain relatively calm despite the absence of its mother?
+NPZ_UAMB,True,When the little girl attacked the lamb remained relatively calm despite the sudden assault.,Did the little girl attack the lamb?,Did the lamb remain relatively calm despite the sudden assault?
+MVRR_UAMB,True,The little girl fed the lamb remained relatively calm despite having asked for beef.,Did the little girl feed the lamb?,Did the little girl remain relatively calm despite having asked for beef?
+NPS_UAMB,True,The yoga instructor demonstrated the position demanded immense physical effort from everyone.,Did the yoga instructor demonstrate the position?,Did the position demand immense physical effort from everyone?
+NPZ_UAMB,True,Before the yoga instructor left the position demanded immense physical effort from everyone.,Did the yoga instructor leave the position?,Did the position demand immense physical effort from everyone?
+MVRR_UAMB,True,The yoga instructor offered the position demanded immense physical effort from everyone.,Did the yoga instructor offer the position?,Did the yoga instructor demand immense physical effort from everyone?
+NPS_UAMB,True,The governor noticed the contract received sweeping support across the entire state.,Did the governor notice the contract?,Did the contract receive sweeping support across the entire state?
+NPZ_UAMB,True,While the governor read the contract received sweeping support from the audience at the rally.,Did the governor read the contract?,Did the contract receive sweeping support from the audience at the rally?
+MVRR_UAMB,True,The governor awarded the contract received sweeping support across the entire state.,Did the governor award the contract?,Did the governor receive sweeping support across the entire state?
+NPS_UAMB,True,The patient reported the treatment continued causing uncomfortable side effects like nausea.,Did the patient report the treatment?,Did the treatment continue causing uncomfortable side effects like nausea?
+NPZ_UAMB,True,Before the patient called the treatment continued causing uncomfortable side effects like nausea.,Did the patient call the treatment?,Did the treatment continue causing uncomfortable side effects like nausea?
+MVRR_UAMB,True,The patient refused the treatment continued causing uncomfortable scenes in the ER.,Did the patient refuse the treatment?,Did the patient continue causing uncomfortable scenes in the ER?
+NPS_UAMB,True,The operator observed the machine started working efficiently all of a sudden.,Did the operator observe the machine?,Did the machine start working efficiently all of a sudden?
+NPZ_UAMB,True,Once the operator stopped the machine started working efficiently without any supervision.,Did the operator stop the machine?,Did the machine start working efficiently without any supervision?
+MVRR_UAMB,True,The operator brought the machine started working efficiently with the added automation.,Did the operator bring the machine?,Did the operator start working efficiently with the added automation?
+NPS_UAMB,True,The dancer knew the ballet achieved incredible success for a small local production.,Did the dancer know the ballet?,Did the ballet achieve incredible success for a small local production?
+NPZ_UAMB,True,Once the dancer began the ballet achieved incredible success for a show with a new performer.,Did the dancer begin the ballet?,Did the ballet achieve incredible success for a show with a new performer?
+MVRR_UAMB,True,The dancer assigned the ballet achieved incredible success for a new performer.,Did the dancer assign the ballet?,Did the dancer achieve incredible success for a new performer?
+NPS_UAMB,True,The contestant revealed the money became unavailable to him when the show's budget shrank.,Did the contestant reveal the money?,Did the money become unavailable to him when the show's budget shrank?
+NPZ_UAMB,True,After the contestant lost the money became unavailable despite his previous three wins in a row.,Did the contestant lose the money?,Did the money become unavailable despite his previous three wins in a row?
+MVRR_UAMB,True,The contestant paid the money became unavailable and suddenly terminated his contract.,Did the contestant pay the money?,Did the contestant become unavailable and suddenly terminate his contract?
+NPS_UAMB,True,The new chef claimed the restaurant separated mediocre cooks from gifted ones.,Did the new chef claim the restaurant?,Did the restaurant separate mediocre cooks from gifted ones?
+NPZ_UAMB,True,Once the new chef started the restaurant separated mediocre cooks from gifted ones.,Did the new chef start the restaurant?,Did the restaurant separate mediocre cooks from gifted ones?
+MVRR_UAMB,True,The new chef offered the restaurant separated mediocre cooks from gifted ones.,Did the new chef offer the restaurant?,Did the new chef separate mediocre cooks from gifted ones?
+NPS_UAMB,True,The apprentice baker discovered the oven produced smaller cakes because it heated too fast.,Did the apprentice baker discover the oven?,Did the oven produce smaller cakes because it heated too fast?
+NPZ_UAMB,True,When the apprentice baker worked the oven produced smaller cakes because he lacked experience.,Did the apprentice baker work the oven?,Did the oven produce smaller cakes because he lacked experience?
+MVRR_UAMB,True,The apprentice baker assigned the oven produced smaller cakes because he lacked experience.,Did the apprentice baker assign the oven?,Did the apprentice baker produce smaller cakes because he lacked experience?
+NPS_UAMB,False,The suspect showed that the file deserved further investigation during the murder trial.,Did the suspect show the file?,Did the file deserve further investigation during the murder trial?
+NPZ_UAMB,False,"Because the suspect changed, the file deserved further investigation during the jury discussions.",Did the suspect change the file?,Did the file deserve further investigation during the jury discussions?
+MVRR_UAMB,False,The suspect who was sent the file deserved further investigation given the new evidence.,Did the suspect send the file?,Did the suspect deserve further investigation given the new evidence?
+NPS_UAMB,False,The corrupt politician mentioned that the bill received unwelcome attention from southern voters.,Did the corrupt politician mention the bill?,Did the bill receive unwelcome attention from southern voters?
+NPZ_UAMB,False,"After the corrupt politician signed, the bill received unwelcome attention from southern voters.",Did the corrupt politician sign the bill?,Did the bill receive unwelcome attention from southern voters?
+MVRR_UAMB,False,The corrupt politician who was handed the bill received unwelcome attention from southern voters.,Did the corrupt politician hand the bill?,Did the corrupt politician receive unwelcome attention from southern voters?
+NPS_UAMB,False,The woman maintained that the mail disappeared mysteriously from her front porch.,Did the woman maintain the mail?,Did the mail disappear mysteriously from her front porch?
+NPZ_UAMB,False,"After the woman moved, the mail disappeared mysteriously from the delivery system.",Did the woman move the mail?,Did the mail disappear mysteriously from the delivery system?
+MVRR_UAMB,False,The woman who was brought the mail disappeared mysteriously after reading the bad news in it.,Did the woman bring the mail?,Did the woman disappear mysteriously after reading the bad news in it?
+NPS_UAMB,False,The boy found that the chicken stayed surprisingly happy in the new barn.,Did the boy find the chicken?,Did the chicken stay surprisingly happy in the new barn?
+NPZ_UAMB,False,"Although the boy attacked, the chicken stayed surprisingly happy as if nothing happened.",Did the boy attack the chicken?,Did the chicken stay surprisingly happy as if nothing happened?
+MVRR_UAMB,False,The boy who was fed the chicken stayed surprisingly happy despite having a mild allergic reaction.,Did the boy feed the chicken?,Did the boy stay surprisingly happy despite having a mild allergic reaction?
+NPS_UAMB,False,The new doctor demonstrated that the operation appeared increasingly likely to succeed.,Did the new doctor demonstrate the operation?,Did the operation appear increasingly likely to succeed?
+NPZ_UAMB,False,"After the new doctor left, the operation appeared increasingly likely to succeed.",Did the new doctor leave the operation?,Did the operation appear increasingly likely to succeed?
+MVRR_UAMB,False,The new doctor who was offered the operation appeared increasingly likely to succeed in her career.,Did the new doctor offer the operation?,Did the new doctor appear increasingly likely to succeed in her career?
+NPS_UAMB,False,The professor noticed that the grant gained more attention from marine biologists.,Did the professor notice the grant?,Did the grant gain more attention from marine biologists?
+NPZ_UAMB,False,"After the professor read, the grant gained more attention due to her excellent description.",Did the professor read the grant gain more attention due to her excellent description .?,Did more attention due to her excellent description?
+MVRR_UAMB,False,The professor who was awarded the grant gained more attention from marine biologists.,Did the professor award the grant?,Did the professor gain more attention from marine biologists?
+NPS_UAMB,False,The technician reported that the service stopped working almost immediately after the storm started.,Did the technician report the service?,Did the service stop working almost immediately after the storm started?
+NPZ_UAMB,False,"After the technician called, the service stopped working almost immediately to his surprise.",Did the technician call the service?,Did the service stop working almost immediately to his surprise?
+MVRR_UAMB,False,The technician who was refused the service stopped working almost immediately after the argument.,Did the technician refuse the service?,Did the technician stop working almost immediately after the argument?
+NPS_UAMB,False,The mechanic observed that the truck needed several more hours to be repaired.,Did the mechanic observe the truck?,Did the truck need several more hours to be repaired?
+NPZ_UAMB,False,"Because the mechanic stopped, the truck needed several more hours before it could be fully repaired.",Did the mechanic stop the truck?,Did the truck need several more hours before it could be fully repaired?
+MVRR_UAMB,False,The mechanic who was brought the truck needed several more hours to fully repair it.,Did the mechanic bring the truck?,Did the mechanic need several more hours to fully repair it?
+NPS_UAMB,False,The guitarist knew that the song failed dramatically because of the tensions within the band.,Did the guitarist know the song?,Did the song fail dramatically because of the tensions within the band?
+NPZ_UAMB,False,"After the guitarist began, the song failed dramatically because he skipped the sound check.",Did the guitarist begin the song?,Did the song fail dramatically because he skipped the sound check?
+MVRR_UAMB,False,The guitarist who was assigned the song failed dramatically because he never practiced enough.,Did the guitarist assign the song?,Did the guitarist fail dramatically because he never practiced enough?
+NPS_UAMB,False,The player revealed that the bonus remained essentially the same as in the original contract.,Did the player reveal the bonus?,Did the bonus remain essentially the same as in the original contract?
+NPZ_UAMB,False,"Although the player lost, the bonus remained essentially the same as in the original contract.",Did the player lose the bonus?,Did the bonus remain essentially the same as in the original contract?
+MVRR_UAMB,False,The player who was paid the bonus remained essentially the same despite his sudden fame and wealth.,Did the player pay the bonus?,Did the player remain essentially the same despite his sudden fame and wealth?
+NPS_UAMB,False,The recent hire claimed that the job prepared many students for careers in media.,Did the recent hire claim the job?,Did the job prepare many students for careers in media?
+NPZ_UAMB,False,"Once the recent hire started, the job prepared many students for careers in media.",Did the recent hire start the job?,Did the job prepare many students for careers in media?
+MVRR_UAMB,False,The recent hire who was offered the job prepared many students for careers in media.,Did the recent hire offer the job?,Did the recent hire prepare many students for careers in media?
+NPS_UAMB,False,The assistant manager discovered that the training seemed unnecessarily demanding for new staff.,Did the assistant manager discover the training?,Did the training seem unnecessarily demanding for new staff?
+NPZ_UAMB,False,"While the assistant manager worked, the training seemed unnecessarily demanding to him.",Did the assistant manager work the training?,Did the training seem unnecessarily demanding to him?
+MVRR_UAMB,False,The assistant manager who was assigned the training seemed unnecessarily demanding to new staff.,Did the assistant manager assign the training?,Did the assistant manager seem unnecessarily demanding to new staff?
+NPS_UAMB,False,The mayor showed that the document provided sufficient evidence to prove her innocence.,Did the mayor show the document?,Did the document provide sufficient evidence to prove her innocence?
+NPZ_UAMB,False,"Although the mayor changed, the document provided sufficient evidence for what he had promised.",Did the mayor change the document?,Did the document provide sufficient evidence for what he had promised?
+MVRR_UAMB,False,The mayor who was sent the document provided sufficient evidence that it was simply blackmail.,Did the mayor send the document?,Did the mayor provide sufficient evidence that it was simply blackmail?
+NPS_UAMB,False,The basketball player mentioned that the contract created another controversy in the NBA.,Did the basketball player mention the contract?,Did the contract create another controversy in the NBA?
+NPZ_UAMB,False,"After the basketball player signed, the contract created another political controversy in the NBA.",Did the basketball player sign the contract?,Did the contract create another political controversy in the NBA?
+MVRR_UAMB,False,The basketball player who was handed the contract created another controversy in the NBA.,Did the basketball player hand the contract?,Did the basketball player create another controversy in the NBA?
+NPS_UAMB,False,The engineer maintained that the equipment required constant supervision from senior technicians.,Did the engineer maintain the equipment?,Did the equipment require constant supervision from senior technicians?
+NPZ_UAMB,False,"After the engineer moved, the equipment required constant supervision from senior technicians.",Did the engineer move the equipment?,Did the equipment require constant supervision from senior technicians?
+MVRR_UAMB,False,The engineer who was brought the equipment required constant supervision from senior technicians.,Did the engineer bring the equipment?,Did the engineer require constant supervision from senior technicians?
+NPS_UAMB,False,The little girl found that the lamb remained relatively calm despite the absence of its mother.,Did the little girl find the lamb?,Did the lamb remain relatively calm despite the absence of its mother?
+NPZ_UAMB,False,"When the little girl attacked, the lamb remained relatively calm despite the sudden assault.",Did the little girl attack the lamb?,Did the lamb remain relatively calm despite the sudden assault?
+MVRR_UAMB,False,The little girl who was fed the lamb remained relatively calm despite having asked for beef.,Did the little girl feed the lamb?,Did the little girl remain relatively calm despite having asked for beef?
+NPS_UAMB,False,The yoga instructor demonstrated that the position demanded immense physical effort from everyone.,Did the yoga instructor demonstrate the position?,Did the position demand immense physical effort from everyone?
+NPZ_UAMB,False,"Before the yoga instructor left, the position demanded immense physical effort from everyone.",Did the yoga instructor leave the position?,Did the position demand immense physical effort from everyone?
+MVRR_UAMB,False,The yoga instructor who was offered the position demanded immense physical effort from everyone.,Did the yoga instructor offer the position?,Did the yoga instructor demand immense physical effort from everyone?
+NPS_UAMB,False,The governor noticed that the contract received sweeping support across the entire state.,Did the governor notice the contract?,Did the contract receive sweeping support across the entire state?
+NPZ_UAMB,False,"While the governor read, the contract received sweeping support from the audience at the rally.",Did the governor read the contract receive sweeping support from the audience at the rally .?,Did sweeping support from the audience at the rally?
+MVRR_UAMB,False,The governor who was awarded the contract received sweeping support across the entire state.,Did the governor award the contract?,Did the governor receive sweeping support across the entire state?
+NPS_UAMB,False,The patient reported that the treatment continued causing uncomfortable side effects like nausea.,Did the patient report the treatment?,Did the treatment continue causing uncomfortable side effects like nausea?
+NPZ_UAMB,False,"Before the patient called, the treatment continued causing uncomfortable side effects like nausea.",Did the patient call the treatment?,Did the treatment continue causing uncomfortable side effects like nausea?
+MVRR_UAMB,False,The patient who was refused the treatment continued causing uncomfortable scenes in the ER.,Did the patient refuse the treatment?,Did the patient continue causing uncomfortable scenes in the ER?
+NPS_UAMB,False,The operator observed that the machine started working efficiently all of a sudden.,Did the operator observe the machine?,Did the machine start working efficiently all of a sudden?
+NPZ_UAMB,False,"Once the operator stopped, the machine started working efficiently without any supervision.",Did the operator stop the machine?,Did the machine start working efficiently without any supervision?
+MVRR_UAMB,False,The operator who was brought the machine started working efficiently with the added automation.,Did the operator bring the machine?,Did the operator start working efficiently with the added automation?
+NPS_UAMB,False,The dancer knew that the ballet achieved incredible success for a small local production.,Did the dancer know the ballet?,Did the ballet achieve incredible success for a small local production?
+NPZ_UAMB,False,"Once the dancer began, the ballet achieved incredible success for a show with a new performer.",Did the dancer begin the ballet?,Did the ballet achieve incredible success for a show with a new performer?
+MVRR_UAMB,False,The dancer who was assigned the ballet achieved incredible success for a new performer.,Did the dancer assign the ballet?,Did the dancer achieve incredible success for a new performer?
+NPS_UAMB,False,The contestant revealed that the money became unavailable to him when the show's budget shrank.,Did the contestant reveal the money?,Did the money become unavailable to him when the show's budget shrank?
+NPZ_UAMB,False,"After the contestant lost, the money became unavailable despite his previous three wins in a row.",Did the contestant lose the money?,Did the money become unavailable despite his previous three wins in a row?
+MVRR_UAMB,False,The contestant who was paid the money became unavailable and suddenly terminated his contract.,Did the contestant pay the money?,Did the contestant become unavailable and suddenly terminate his contract?
+NPS_UAMB,False,The new chef claimed that the restaurant separated mediocre cooks from gifted ones.,Did the new chef claim the restaurant?,Did the restaurant separate mediocre cooks from gifted ones?
+NPZ_UAMB,False,"Once the new chef started, the restaurant separated mediocre cooks from gifted ones.",Did the new chef start the restaurant?,Did the restaurant separate mediocre cooks from gifted ones?
+MVRR_UAMB,False,The new chef who was offered the restaurant separated mediocre cooks from gifted ones.,Did the new chef offer the restaurant?,Did the new chef separate mediocre cooks from gifted ones?
+NPS_UAMB,False,The apprentice baker discovered that the oven produced smaller cakes because it heated too fast.,Did the apprentice baker discover the oven?,Did the oven produce smaller cakes because it heated too fast?
+NPZ_UAMB,False,"When the apprentice baker worked, the oven produced smaller cakes because he lacked experience.",Did the apprentice baker work the oven?,Did the oven produce smaller cakes because he lacked experience?
+MVRR_UAMB,False,The apprentice baker who was assigned the oven produced smaller cakes because he lacked experience.,Did the apprentice baker assign the oven?,Did the apprentice baker produce smaller cakes because he lacked experience?

@@ -10,25 +10,36 @@ def load_examples(datapath, tokenizer):
         reader = csv.reader(data)
         next(reader)    # skip header
         for row in reader:
-            condition, is_ambig, sentence, readingcomp_q = row
+            condition, is_ambig, sentence, readingcomp_q_no, readingcomp_q_yes = row
             is_ambig = (is_ambig == "True")
 
-            sentence_tok = tokenizer(sentence, return_tensors="pt").input_ids
-            readingcomp_q_tok = tokenizer(" "+readingcomp_q, return_tensors="pt").input_ids
-            correct_answer = tokenizer("No", return_tensors="pt").input_ids
-            incorrect_answer = tokenizer("Yes", return_tensors="pt").input_ids
-            if correct_answer.shape[1] != 1 or incorrect_answer.shape[1] != 1:
+            sentence_tok = tokenizer(sentence, return_tensors="pt").input_ids.to("cuda")
+            readingcomp_q_no_tok = tokenizer(" "+readingcomp_q_no, return_tensors="pt").input_ids.to("cuda")
+            readingcomp_q_yes_tok = tokenizer(" "+readingcomp_q_yes, return_tensors="pt").input_ids.to("cuda")
+            no_answer = tokenizer("No", return_tensors="pt").input_ids.to("cuda")
+            yes_answer = tokenizer("Yes", return_tensors="pt").input_ids.to("cuda")
+            if no_answer.shape[1] != 1 or yes_answer.shape[1] != 1:
                 continue
-
-            example = {
+            
+            example_no = {
                 "condition": condition,
                 "ambiguous": is_ambig,
                 "sentence": sentence_tok,
-                "readingcomp_q": readingcomp_q_tok,
-                "correct_answer": correct_answer,      # we should add examples where the correct answer is yes
-                "incorrect_answer": incorrect_answer
+                "readingcomp_q": readingcomp_q_no_tok,
+                "correct_answer": no_answer,      # we should add examples where the correct answer is yes
+                "incorrect_answer": yes_answer
             }
-            examples.append(example)
+            examples.append(example_no)
+            example_yes = {
+                "condition": condition,
+                "ambiguous": is_ambig,
+                "sentence": sentence_tok,
+                "readingcomp_q": readingcomp_q_yes_tok,
+                "correct_answer": yes_answer,
+                "incorrect_answer": no_answer
+            }
+            examples.append(example_yes)
+
     return examples
             
 
@@ -50,15 +61,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     tokenizer = AutoTokenizer.from_pretrained(args.model, add_bos_token=False)
-    bnb_config = BitsAndBytesConfig(    # use 4-bit quantization to make it fit on a single GPU
-        load_in_4bit=True,
-        bnb_4bit_quant_type='nf4',
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_compute_dtype=torch.bfloat16
-    )
+    # bnb_config = BitsAndBytesConfig(    # use 4-bit quantization to make it fit on a single GPU
+    #     load_in_4bit=True,
+    #     bnb_4bit_quant_type='nf4',
+    #     bnb_4bit_use_double_quant=True,
+    #     bnb_4bit_compute_dtype=torch.bfloat16
+    # )
 
-    model = AutoModelForCausalLM.from_pretrained(args.model,
-                                                 quantization_config=bnb_config)
+    model = AutoModelForCausalLM.from_pretrained(args.model).to("cuda")
+                                                #  quantization_config=bnb_config)
     
     examples = load_examples(args.dataset, tokenizer)
     num_examples = len(examples)

@@ -1,0 +1,3 @@
+[submodule "feature-circuits-gp"]
+	path = feature-circuits-gp
+	url = git@github.com:hannamw/feature-circuits-gp.git

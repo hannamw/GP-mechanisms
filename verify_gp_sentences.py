@@ -1,4 +1,7 @@
 #%%
+"""
+Script to check that all the garden path sentence lengths are equal
+"""
 import numpy as np
 import pandas as pd
 from transformers import AutoTokenizer

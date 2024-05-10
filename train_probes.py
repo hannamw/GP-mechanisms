@@ -1,5 +1,6 @@
 #%%
 from collections import defaultdict
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -9,8 +10,11 @@ import torch
 from concept_erasure import LeaceEraser
 from transformer_lens import HookedTransformer
 #%%
-model = HookedTransformer.from_pretrained('EleutherAI/pythia-70m')
-df = pd.read_csv('data_csv/garden_path_sentences_same_len.csv')
+model_name = 'gpt2'
+save_name = model_name.split('/')[-1]
+p = Path(f"activations/{save_name}")
+model = HookedTransformer.from_pretrained(model_name)
+df = pd.read_csv('data_csv/gp_same_len.csv')
 condition = 'NPZ'
 df = df[df['condition'] == condition]
 
@@ -21,15 +25,15 @@ post_token = ' was'
 post_token_id = model.tokenizer(post_token, add_special_tokens=False)['input_ids'][0]
 
 sentences = {column:df[column].tolist() for column in ['sentence_ambiguous','sentence_gp','sentence_post']}
-activation_points = [f'blocks.{i}.hook_resid_post' for i in range(6)]#[-2]
+activation_points = [f'blocks.{i}.hook_resid_post' for i in range(model.cfg.n_layers)]
 #%%
 d = defaultdict(list)
 for activation_point in activation_points:
     d['activation_point'].append(activation_point)
     print(activation_point)
-    acts_ambiguous = torch.load(f"activations/sentence_ambiguous-{activation_point}.pt")[:, -3:]
-    acts_gp = torch.load(f"activations/sentence_gp-{activation_point}.pt")[:, -3:]
-    acts_post = torch.load(f"activations/sentence_post-{activation_point}.pt")[:, -3:]
+    acts_ambiguous = torch.load(p / f"sentence_ambiguous-{condition}-{activation_point}.pt")[:, -3:]
+    acts_gp = torch.load(p / f"sentence_gp-{condition}-{activation_point}.pt")[:, -3:]
+    acts_post = torch.load(p / f"sentence_post-{condition}-{activation_point}.pt")[:, -3:]
     
     ambiguous_x = rearrange(acts_ambiguous, 'b s d -> (b s) d')
     gp_x = rearrange(acts_gp, 'b s d -> (b s) d')
@@ -54,7 +58,7 @@ for activation_point in activation_points:
 
     # But learns nothing after
     null_lr = LogisticRegression(max_iter=1000, tol=0.0).fit(X_.numpy(), y.numpy())
-    null_preds = null_lr.predict(X)
+    null_preds = null_lr.predict(X_.numpy())
     null_accuracy = (null_preds == y.numpy()).mean()
     print(f"Null accuracy: {null_accuracy:.2f}")
     d['null_accuracy'].append(null_accuracy)

@@ -1,10 +1,12 @@
 #%%
 import pandas as pd
-
 from transformers import AutoTokenizer
+
+model_name = 'EleutherAI/pythia-70m'
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 #%%
 df = pd.read_csv('garden_path_sentences_trimmed.csv')
-tokenizer = AutoTokenizer.from_pretrained('EleutherAI/pythia-70m')
+
 for col in ['ambiguous', 'gp', 'post']:
     colname = f'sentence_{col}'
     lens = [len(tokenizer(s)['input_ids']) for s in df[colname]]
@@ -13,7 +15,6 @@ for col in ['ambiguous', 'gp', 'post']:
 df.to_csv('garden_path_sentences_trimmed_lens.csv')
 # %%
 df = pd.read_csv('garden_path_sentences_same_len.csv')
-tokenizer = AutoTokenizer.from_pretrained('EleutherAI/pythia-70m')
 for col in ['ambiguous', 'gp', 'post']:
     colname = f'sentence_{col}'
     lens = [len(tokenizer(s)['input_ids']) for s in df[colname]]

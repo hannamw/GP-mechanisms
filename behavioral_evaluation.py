@@ -3,8 +3,9 @@ import pandas as pd
 from transformer_lens import HookedTransformer
 import torch
 #%%
-df = pd.read_csv('data_csv/garden_path_sentences_same_len.csv')
+df = pd.read_csv('data_csv/gp_same_len.csv')
 model_name = 'gpt2'
+save_name = model_name.split('/')[-1]
 model = HookedTransformer.from_pretrained(model_name)
 #%%
 
@@ -28,7 +29,7 @@ for column in ['sentence_ambiguous','sentence_gp','sentence_post']:
     df[f'{ambiguity}_punct_prob'] = gp_probs
     df[f'{ambiguity}_was_prob'] = post_probs
 
-df.to_csv(f'results/{model_name}/garden_path_sentences_same_len_probs.csv', index=False)
+df.to_csv(f'results/{save_name}/gp_with_probs.csv', index=False)
 # %%
 d = {'condition': [], '% post': [], '% gp':[]}
 for ambiguity in ['ambiguous','gp','post']:
@@ -46,5 +47,5 @@ for ambiguity in ['ambiguous','gp','post']:
         d['% gp'].append(1 - post_percent)
 
 df2 = pd.DataFrame(d)
-df2.to_csv(f'results/{model_name}/behavioral_summary.csv', index=False)
+df2.to_csv(f'results/{save_name}/behavioral_summary.csv', index=False)
 # %%

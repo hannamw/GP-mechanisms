@@ -1,0 +1,97 @@
+item,condition,sentence_ambiguous,sentence_gp,sentence_post
+1,NPS,The suspect showed the file,The suspect hid the file,The suspect said the file
+1,NPZ,Because the suspect changed the file,Because the suspect altered the file,Because the suspect lied the file
+1,MVRR,The suspect sent the file,The suspect destroyed the file,The suspect shown the file
+2,NPS,The politician mentioned the bill,The politician signed the bill,The politician said the bill
+2,NPZ,After the politician signed the bill,After the politician rejected the bill,After the politician arrived the bill
+2,MVRR,The politician handed the bill,The politician rejected the bill,The politician given the bill
+3,NPS,The woman maintained the mail,The woman received the mail,The woman said the mail
+3,NPZ,After the woman moved the mail,After the woman shredded the mail,After the woman departed the mail
+3,MVRR,The woman brought the mail,The woman moved the mail,The woman shown the mail
+4,NPS,The boy found the chicken,The boy rescued the chicken,The boy thought the chicken
+4,NPZ,Although the boy attacked the chicken,Although the boy grabbed the chicken,Although the boy died the chicken
+4,MVRR,The boy fed the chicken,The boy ate the chicken,The boy given the chicken
+5,NPS,The doctor demonstrated the operation,The doctor tried the operation,The doctor thought the operation
+5,NPZ,After the doctor left the operation,After the doctor abandoned the operation,After the doctor departed the operation
+5,MVRR,The doctor offered the operation,The doctor gave the operation,The doctor given the operation
+6,NPS,The professor noticed the grant,The professor won the grant,The professor said the grant
+6,NPZ,After the professor read the grant,After the professor won the grant,After the professor came the grant
+6,MVRR,The professor awarded the grant,The professor gave the grant,The professor given the grant
+7,NPS,The technician reported the service,The technician reset the service,The technician complained the service
+7,NPZ,After the technician called the service,After the technician contacted the service,After the technician came the service
+7,MVRR,The technician refused the service,The technician terminated the service,The technician given the service
+8,NPS,The mechanic observed the truck,The mechanic watched the truck,The mechanic thought the truck
+8,NPZ,Because the mechanic stopped the truck,Because the mechanic broke the truck,Because the mechanic waited the truck
+8,MVRR,The mechanic brought the truck,The mechanic drove the truck,The mechanic shown the truck
+9,NPS,The guitarist knew the song,The guitarist wrote the song,The guitarist said the song
+9,NPZ,After the guitarist began the song,After the guitarist ruined the song,After the guitarist arrived the song
+9,MVRR,The guitarist assigned the song,The guitarist gave the song,The guitarist sung the song
+10,NPS,The player revealed the bonus,The player said the bonus,The player complained the bonus
+10,NPZ,Although the player lost the bonus,Although the player rejected the bonus,Although the player disappeared the bonus
+10,MVRR,The player paid the bonus,The player spent the bonus,The player given the bonus
+11,NPS,The employee claimed the job,The employee did the job,The employee said the job
+11,NPZ,Once the employee started the job,Once the employee got the job,Once the employee arrived the job
+11,MVRR,The employee offered the job,The employee loved the job,The employee given the job
+12,NPS,The manager discovered the training,The manager hated the training,The manager thought the training
+12,NPZ,While the manager worked the training,While the manager did the training,While the manager remained the training
+12,MVRR,The manager assigned the training,The manager gave the training,The manager shown the training
+13,NPS,The mayor showed the document,The mayor displayed the document,The mayor said the document
+13,NPZ,Although the mayor changed the document,Although the mayor forged the document,Although the mayor vanished the document
+13,MVRR,The mayor sent the document,The mayor discarded the document,The mayor given the document
+14,NPS,The player mentioned the contract,The player signed the contract,The player said the contract
+14,NPZ,After the player signed the contract,After the player rejected the contract,After the player died the contract
+14,MVRR,The player handed the contract,The player signed the contract,The player shown the contract
+15,NPS,The engineer maintained the equipment,The engineer monitored the equipment,The engineer said the equipment
+15,NPZ,After the engineer moved the equipment,After the engineer broke the equipment,After the engineer died the equipment
+15,MVRR,The engineer brought the equipment,The engineer transported the equipment,The engineer given the equipment
+16,NPS,The girl found the lamb,The girl adopted the lamb,The girl thought the lamb
+16,NPZ,When the girl attacked the lamb,When the girl grabbed the lamb,When the girl jumped the lamb
+16,MVRR,The girl fed the lamb,The girl helped the lamb,The girl given the lamb
+17,NPS,The instructor demonstrated the position,The instructor performed the position,The instructor said the position
+17,NPZ,Before the instructor left the position,Before the instructor performed the position,Before the instructor departed the position
+17,MVRR,The instructor offered the position,The instructor proposed the position,The instructor given the position
+18,NPS,The governor noticed the contract,The governor approved the contract,The governor said the contract
+18,NPZ,While the governor read the contract,While the governor denounced the contract,While the governor slept the contract
+18,MVRR,The governor awarded the contract,The governor approved the contract,The governor given the contract
+19,NPS,The patient reported the treatment,The patient rejected the treatment,The patient said the treatment
+19,NPZ,Before the patient called the treatment,Before the patient received the treatment,Before the patient slept the treatment
+19,MVRR,The patient refused the treatment,The patient denounced the treatment,The patient given the treatment
+20,NPS,The operator observed the machine,The operator watched the machine,The operator said the machine
+20,NPZ,Once the operator stopped the machine,Once the operator broke the machine,Once the operator departed the machine
+20,MVRR,The operator brought the machine,The operator transported the machine,The operator shown the machine
+21,NPS,The dancer knew the ballet,The dancer danced the ballet,The dancer though the ballet
+21,NPZ,Once the dancer began the ballet,Once the dancer loved the ballet,Once the dancer arrived the ballet
+21,MVRR,The dancer assigned the ballet,The dancer hated the ballet,The dancer given the ballet
+22,NPS,The participant revealed the money,The participant lost the money,The participant said the money
+22,NPZ,After the participant lost the money,After the participant wasted the money,After the participant died the money
+22,MVRR,The participant paid the money,The participant lost the money,The participant given the money
+23,NPS,The chef claimed the restaurant,The chef wanted the restaurant,The chef said the restaurant
+23,NPZ,Once the chef started the restaurant,Once the chef opened the restaurant,Once the chef arrived the restaurant
+23,MVRR,The chef offered the restaurant,The chef owned the restaurant,The chef given the restaurant
+24,NPS,The cook discovered the oven,The cook opened the oven,The cook thought the oven
+24,NPZ,When the cook worked the oven,When the cook baked the oven,When the cook emerged the oven
+24,MVRR,The cook assigned the oven,The cook used the oven,The cook given the oven
+1,NPZ_comma,"Because the suspect changed, the file",Because the suspect altered the file,"Because the suspect lied, the file"
+2,NPZ_comma,"After the politician signed, the bill",After the politician rejected the bill,"After the politician arrived, the bill"
+3,NPZ_comma,"After the woman moved, the mail",After the woman shredded the mail,"After the woman departed, the mail"
+4,NPZ_comma,"Although the boy attacked, the chicken",Although the boy grabbed the chicken,"Although the boy died, the chicken"
+5,NPZ_comma,"After the doctor left, the operation",After the doctor abandoned the operation,"After the doctor departed, the operation"
+6,NPZ_comma,"After the professor read, the grant",After the professor won the grant,"After the professor came, the grant"
+7,NPZ_comma,"After the technician called, the service",After the technician contacted the service,"After the technician came, the service"
+8,NPZ_comma,"Because the mechanic stopped, the truck",Because the mechanic broke the truck,"Because the mechanic waited, the truck"
+9,NPZ_comma,"After the guitarist began, the song",After the guitarist ruined the song,"After the guitarist arrived, the song"
+10,NPZ_comma,"Although the player lost, the bonus",Although the player rejected the bonus,"Although the player disappeared, the bonus"
+11,NPZ_comma,"Once the employee started, the job",Once the employee got the job,"Once the employee arrived, the job"
+12,NPZ_comma,"While the manager worked, the training",While the manager did the training,"While the manager remained, the training"
+13,NPZ_comma,"Although the mayor changed, the document",Although the mayor forged the document,"Although the mayor vanished, the document"
+14,NPZ_comma,"After the player signed, the contract",After the player rejected the contract,"After the player died, the contract"
+15,NPZ_comma,"After the engineer moved, the equipment",After the engineer broke the equipment,"After the engineer died, the equipment"
+16,NPZ_comma,"When the girl attacked, the lamb",When the girl grabbed the lamb,"When the girl jumped, the lamb"
+17,NPZ_comma,"Before the instructor left, the position",Before the instructor performed the position,"Before the instructor departed, the position"
+18,NPZ_comma,"While the governor read, the contract",While the governor denounced the contract,"While the governor slept, the contract"
+19,NPZ_comma,"Before the patient called, the treatment",Before the patient received the treatment,"Before the patient slept, the treatment"
+20,NPZ_comma,"Once the operator stopped, the machine",Once the operator broke the machine,"Once the operator departed, the machine"
+21,NPZ_comma,"Once the dancer began, the ballet",Once the dancer loved the ballet,"Once the dancer arrived, the ballet"
+22,NPZ_comma,"After the participant lost, the money",After the participant wasted the money,"After the participant died, the money"
+23,NPZ_comma,"Once the chef started, the restaurant",Once the chef opened the restaurant,"Once the chef arrived, the restaurant"
+24,NPZ_comma,"When the cook worked, the oven",When the cook baked the oven,"When the cook emerged, the oven"

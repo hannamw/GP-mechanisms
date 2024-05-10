@@ -85,7 +85,7 @@ def estimate_effects(model, mean_activations, input, correct_token, incorrect_to
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=str, default="EleutherAI/pythia-410m-deduped")
-    parser.add_argument("--dataset_path", type=str, default="garden_path_sentences.csv")
+    parser.add_argument("--dataset_path", type=str, default="gp_orig.csv")
     args = parser.parse_args()
 
     model = LanguageModel(args.model, dispatch=True, device_map="cuda:0")

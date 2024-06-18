@@ -50,7 +50,7 @@ def load_examples(datapath, tokenizer):
             
 
 def eval_example(model, prompt, correct_label, incorrect_label, ablate_features=None, inject_features=None,
-                 dictionaries=None):
+                 dictionaries=None, return_surprisals=False):
     """
     model: AutoModelForCausalLM
     prompt: string
@@ -64,10 +64,6 @@ def eval_example(model, prompt, correct_label, incorrect_label, ablate_features=
                 for submodule in ablate_features:
                     ae = dictionaries[submodule]
                     ablate_feature_list = ablate_features[submodule]
-                    if inject_features is not None and submodule in inject_features:
-                        inject_feature_list = inject_features[submodule]
-                    else:
-                        inject_feature_list = []
                     x = submodule.output
                     if type(x.shape) == tuple:
                         x = x[0]
@@ -78,7 +74,6 @@ def eval_example(model, prompt, correct_label, incorrect_label, ablate_features=
 
                     f_new = torch.clone(f)
                     f_new[:, :, ablate_feature_list] = 0.
-                    f_new[:, :5, inject_feature_list] = 5.
                     x_hat = ae.decode(f_new)
                     if type(submodule.output.shape) == tuple:
                         submodule.output[0][:] = x_hat + residual
@@ -86,8 +81,6 @@ def eval_example(model, prompt, correct_label, incorrect_label, ablate_features=
                         submodule.output = x_hat + residual
             if inject_features is not None:
                 for submodule in inject_features:
-                    if ablate_features is not None and submodule in ablate_features:
-                        continue
                     ae = dictionaries[submodule]
                     inject_feature_list = inject_features[submodule]
                     x = submodule.output
@@ -108,13 +101,21 @@ def eval_example(model, prompt, correct_label, incorrect_label, ablate_features=
 
             logits_saved = model.lm_head.output.save()
             # logits_saved = model.embed_out.output.save()
-        logits = logits_saved.value[0, -1]
+        logits = logits_saved.value
     else:
         with model.trace(prompt), torch.no_grad():
             # logits_saved = model.embed_out.output.save()
             logits_saved = model.lm_head.output.save()
-        logits = logits_saved.value[0, -1]
-    return logits[correct_label] > logits[incorrect_label]
+        logits = logits_saved.value
+    
+    is_correct = logits[0, -1, correct_label] > logits[0, -1, incorrect_label]
+    if return_surprisals:
+        surprisals = -1 * torch.nn.functional.log_softmax(logits, dim=-1)
+        token_strs = model.tokenizer.convert_ids_to_tokens(prompt[0])
+        surprisals_tokens = [(token_strs[0], 0.0)]
+        surprisals_tokens.extend([(token_strs[idx+1], logits[0, idx, prompt[0, idx+1]].item()) for idx in range(prompt.shape[-1] - 1)])
+        return (is_correct, surprisals_tokens)
+    return is_correct
 
 
 def submodule_name_to_submodule(submodule_name):
@@ -206,8 +207,10 @@ if __name__ == "__main__":
         label = "gp" if example["correct_answer"] == tokenizer("No", add_special_tokens=False,
                                                                return_tensors="pt").input_ids.to("cuda") else "post"
         prompt = torch.cat((example["sentence"], example["readingcomp_q"]), dim=1)
-        is_correct = int(eval_example(model, prompt, example["correct_answer"], example["incorrect_answer"],
-                                      ablate_features=ablate_features, dictionaries=dictionaries))
+        is_correct, surprisals = eval_example(model, prompt, example["correct_answer"], example["incorrect_answer"],
+                                      ablate_features=ablate_features, dictionaries=dictionaries,
+                                      return_surprisals=True)
+        is_correct = int(is_correct)
         correct += is_correct
 
         correct_grouped_amb[condition][is_amb] += is_correct
@@ -216,7 +219,7 @@ if __name__ == "__main__":
         if is_amb == "amb":
             correct_grouped_label[condition][label] += is_correct
             total_grouped_label[condition][label] += 1
-    
+            
     print(f"Overall Accuracy: {correct / num_examples:.2f}")
     for condition in correct_grouped_amb:
         print(f"{condition}:")

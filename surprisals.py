@@ -1,15 +1,17 @@
 import argparse
 import csv
+import json
 import torch
 from tqdm import tqdm
 from nnsight import LanguageModel
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from collections import defaultdict
+from copy import deepcopy
 import importlib
 import numpy as np
 dictionary = importlib.import_module("feature-circuits-gp.dictionary_learning.dictionary")
 
-def load_examples(datapath, tokenizer, length=None):
+def load_examples(datapath, tokenizer, same_len=False):
     examples = []
     with open(datapath, "r") as data:
         reader = csv.reader(data)
@@ -29,6 +31,7 @@ def load_examples(datapath, tokenizer, length=None):
             if post_continuation.shape[1] != 1 or gp_continuation.shape[1] != 1:
                 continue
             
+            target_len = 6 if condition in ("NPS", "MVRR") else 7
             example = {
                 "condition": condition,
                 "type": "amb",
@@ -36,7 +39,8 @@ def load_examples(datapath, tokenizer, length=None):
                 "post_answer": post_continuation,
                 "gp_answer": gp_continuation
             }
-            examples.append(example)
+            if not same_len or example["sentence"].shape[-1] == target_len:
+                examples.append(example)
             example = {
                 "condition": condition,
                 "type": "gp",
@@ -44,7 +48,8 @@ def load_examples(datapath, tokenizer, length=None):
                 "post_answer": post_continuation,
                 "gp_answer": gp_continuation
             }
-            examples.append(example)
+            if not same_len or example["sentence"].shape[-1] == target_len:
+                examples.append(example)
             example = {
                 "condition": condition,
                 "type": "post",
@@ -52,13 +57,14 @@ def load_examples(datapath, tokenizer, length=None):
                 "post_answer": post_continuation,
                 "gp_answer": gp_continuation
             }
-            examples.append(example)
+            if not same_len or example["sentence"].shape[-1] == target_len:
+                examples.append(example)
 
     return examples
             
 
 def eval_example(model, prompt, correct_label, incorrect_label, ablate_features=None, inject_features=None,
-                 dictionaries=None):
+                 dictionaries=None, aggregation="final_pos"):
     """
     model: AutoModelForCausalLM
     prompt: string
@@ -116,8 +122,17 @@ def eval_example(model, prompt, correct_label, incorrect_label, ablate_features=
 
     logits = logits_saved.value
     surprisals = -1 * torch.nn.functional.log_softmax(logits, dim=-1)
-    surprisals_gp = surprisals[0, -1, incorrect_label].item()
-    surprisals_post = surprisals[0, -1, correct_label].item()
+    if aggregation == "final_pos":
+        surprisals_gp = surprisals[0, -1, incorrect_label].item()
+        surprisals_post = surprisals[0, -1, correct_label].item()
+    elif aggregation == "none":
+        surprisals_sent = [surprisals[0, idx, prompt[0, idx+1]].item() for idx in range(prompt.shape[1]-1)]
+        surprisals_gp = surprisals_sent
+        surprisals_post = deepcopy(surprisals_sent)
+        surprisals_gp.append(surprisals[0, -1, incorrect_label])
+        surprisals_gp = torch.Tensor(surprisals_gp)
+        surprisals_post.append(surprisals[0, -1, correct_label])
+        surprisals_post = torch.Tensor(surprisals_post)
     return (surprisals_post, surprisals_gp)
 
 
@@ -155,6 +170,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", "-m", type=str, default="meta-llama/Meta-Llama-3-8B", help="Name of model.")
     parser.add_argument("--dataset", "-d", type=str, default="gp_same_len.csv")
+    parser.add_argument("--same_len", "-l", action="store_true")
     parser.add_argument("--autoencoder_dir", "-a", type=str, default=None)
     parser.add_argument("--ablate_features", "-f", type=str, nargs='*', default=None)
     parser.add_argument("--inject_features", "-i", type=str, nargs='*', default=None)
@@ -173,7 +189,7 @@ if __name__ == "__main__":
     model = LanguageModel(args.model, torch_dtype=torch.float16,
                           device_map="cuda")
     
-    examples = load_examples(args.dataset, tokenizer)
+    examples = load_examples(args.dataset, tokenizer, same_len=args.same_len)
     num_examples = len(examples)
 
     ablate_features = None
@@ -209,26 +225,47 @@ if __name__ == "__main__":
                 "NPZ": {"amb": 0, "post": 0, "gp": 0},
                 "MVRR": {"amb": 0, "post": 0, "gp": 0}}
 
+    aggregation = "none" if args.same_len else "final_pos"
     for example in tqdm(examples, desc="Examples", total=num_examples):
         condition = example["condition"]
         type = example["type"]
         gp_continuation = example["gp_answer"]
         post_continuation = example["post_answer"]
+
         surprisal_post, surprisal_gp = eval_example(model, example["sentence"],
                                                     post_continuation, gp_continuation,
-                                                    ablate_features=ablate_features, dictionaries=dictionaries)
+                                                    ablate_features=ablate_features, dictionaries=dictionaries,
+                                                    aggregation=aggregation)
+        
         surprisals_gp[condition][type].append(surprisal_gp)
         surprisals_post[condition][type].append(surprisal_post)
         totals[condition][type] += 1
-            
-    for condition in surprisals_gp:
-        for type in surprisals_gp[condition]:
-            N = totals[condition][type]
-            mean_gp_surprisal = np.mean(surprisals_gp[condition][type])
-            std_gp_surprisal = np.std(surprisals_gp[condition][type])
-            mean_post_surprisal = np.mean(surprisals_post[condition][type])
-            std_post_surprisal = np.std(surprisals_post[condition][type])
-            print(f"{condition} ({type}), N={N}:")
-            print(f"\tGP: {mean_gp_surprisal:.2f} ({std_gp_surprisal:.2f})")
-            print(f"\tPost: {mean_post_surprisal:.2g} ({std_post_surprisal:.2f})")
-        print()
+
+    with open(f"analysis/word_surprisals_agg{aggregation}.jsonl", "w") as out_file: 
+        for condition in surprisals_gp:
+            for type in surprisals_gp[condition]:
+                N = totals[condition][type]
+                if args.same_len:
+                    surprisals_gp_ct = torch.stack([s for s in surprisals_gp[condition][type]])
+                    surprisals_post_ct = torch.stack([s for s in surprisals_post[condition][type]])
+                    mean_gp_surprisal = torch.mean(surprisals_gp_ct, dim=0).tolist()
+                    std_gp_surprisal = torch.std(surprisals_gp_ct, dim=0).tolist()
+                    mean_post_surprisal = torch.mean(surprisals_post_ct, dim=0).tolist()
+                    std_post_surprisal = torch.std(surprisals_post_ct, dim=0).tolist()
+                else:
+                    mean_gp_surprisal = np.mean(surprisals_gp[condition][type])
+                    std_gp_surprisal = np.std(surprisals_gp[condition][type])
+                    mean_post_surprisal = np.mean(surprisals_post[condition][type])
+                    std_post_surprisal = np.std(surprisals_post[condition][type])
+                print(f"{condition} ({type}), N={N}:")
+                print(f"\tGP: {mean_gp_surprisal} ({std_gp_surprisal})")
+                print(f"\tPost: {mean_post_surprisal} ({std_post_surprisal})")
+                json_data = {
+                    "condition": condition, "type": type, "num_examples": N,
+                    "sent_gp_mean_surprisals": mean_gp_surprisal,
+                    "sent_gp_std": std_gp_surprisal,
+                    "sent_post_mean_surprisals": mean_post_surprisal,
+                    "sent_post_std": std_post_surprisal
+                }
+                out_file.write(json.dumps(json_data)+"\n")
+            print()

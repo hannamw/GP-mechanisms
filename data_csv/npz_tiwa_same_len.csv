@@ -1,0 +1,21 @@
+prefix,continuation_1,head_idxs_1,continuation_2,head_idxs_2,both,neither,transitive,plurality
+Although the band left the party,I stayed .,"[4,3,4,8,6,4,8,0]",went on .,"[4,3,4,7,6,7,0,7]",raged on for,.,True,0
+As the criminal shot the woman,I shouted .,"[4,3,4,8,6,4,8,0]",fell down .,"[4,3,4,7,6,7,0,7]",on the porch,.,True,0
+When the dog bit the doctor,I laughed .,"[4,3,4,8,6,4,8,0]",ran away .,"[4,3,4,7,6,7,0,7]",who was walking,.,True,0
+As the ship crossed the waters,we slept .,"[4,3,4,8,6,4,8,0]",remained calm .,"[4,3,4,7,6,7,0,7]",which were calm,.,True,1
+While the students ate the food,I starved .,"[4,3,4,8,6,4,8,0]",became cold .,"[4,3,4,7,6,7,0,7]",from the grocery,.,True,0
+When the professor taught the visitors,I listened .,"[4,3,4,8,6,4,8,0]",lost interest .,"[4,3,4,7,6,7,0,7]",who were in,.,True,1
+Because the baby grabbed the woman,we cheered .,"[4,3,4,8,6,4,8,0]",stayed longer .,"[4,3,4,7,6,7,0,7]",who was near,.,True,0
+After the patient asked the nurse,I cried .,"[4,3,4,8,6,4,8,0]",told her .,"[4,3,4,7,6,7,0,7]",in the hospital,.,True,0
+After the guard visited the children,we visited .,"[4,3,4,8,6,4,8,0]",played more .,"[4,3,4,7,6,7,0,7]",who were playing,.,True,1
+After the dog signaled the farmer,I worked .,"[4,3,4,8,6,4,8,0]",went out .,"[4,3,4,7,6,7,0,7]",who was focused,.,True,0
+As the students considered the teacher,I arrived .,"[4,3,4,8,6,4,8,0]",asked questions .,"[4,3,4,7,6,7,0,7]",who was speaking,.,True,0
+While the woman decorated the pot,we watched .,"[4,3,4,8,6,4,8,0]",sat still .,"[4,3,4,7,6,7,0,7]",which was made,.,True,0
+When the customer interrupted the manager,we watched .,"[4,3,4,8,6,4,8,0]",responded calmly .,"[4,3,4,7,6,7,0,7]",of the store,.,True,0
+As the man wiped the pipe,I watched .,"[4,3,4,8,6,4,8,0]",blew smoke .,"[4,3,4,7,6,7,0,7]",made of wood,.,True,0
+While the prisoners watched the guards,we escaped .,"[4,3,4,8,6,4,8,0]",threatened them .,"[4,3,4,7,6,7,0,7]",who were working,.,True,1
+While the king governed his subjects,I left .,"[4,3,4,8,6,4,8,0]",feared him .,"[4,3,4,7,6,7,0,7]",who were loyal,.,True,1
+After the host interrupted the discussion,I spoke .,"[4,3,4,8,6,4,8,0]",became interesting .,"[4,3,4,7,6,7,0,7]",about the show,.,True,0
+After the woman dressed her children,we departed .,"[4,3,4,8,6,4,8,0]",played games .,"[4,3,4,7,6,7,0,7]",who were waiting,.,True,1
+After the soldier signaled the doctor,I helped .,"[4,3,4,8,6,4,8,0]",stopped operating .,"[4,3,4,7,6,7,0,7]",in the hospital,.,True,0
+As the guards stopped the thieves,we relaxed .,"[4,3,4,8,6,4,8,0]",stole more .,"[4,3,4,7,6,7,0,7]",who were running,.,True,1

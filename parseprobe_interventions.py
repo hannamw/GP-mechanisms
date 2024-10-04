@@ -7,7 +7,7 @@ from nnsight import LanguageModel
 
 from parseprobe import ParseProbe
 #%%
-model_name = 'EleutherAI/pythia-70m'
+model_name = 'EleutherAI/pythia-70m-deduped'
 model_name_noslash = model_name.split('/')[-1]
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = LanguageModel(model_name, device_map='auto')

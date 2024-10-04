@@ -4,20 +4,20 @@ from transformer_lens import HookedTransformer
 import torch
 #%%
 df = pd.read_csv('data_csv/gp_same_len.csv')
-model_name = 'gpt2'
+model_name = 'google/gemma-2-2b'
 save_name = model_name.split('/')[-1]
 model = HookedTransformer.from_pretrained(model_name)
 #%%
 
 post_token = ' was'
-post_token_id = model.tokenizer(post_token)['input_ids'][0]
+post_token_id = model.tokenizer(post_token, add_special_tokens=False)['input_ids'][0]
 for column in ['sentence_ambiguous','sentence_gp','sentence_post']:
     ambiguity = column.split('_')[1]
     gp_probs = []
     post_probs = []
     for sentence, condition in zip(df[column], df['condition']):
         gp_token = ',' if 'NPZ' in condition  else '.'
-        gp_token_id = model.tokenizer(gp_token)['input_ids'][0]
+        gp_token_id = model.tokenizer(gp_token, add_special_tokens=False)['input_ids'][0]
     
         probs = torch.softmax(model(sentence).squeeze(0)[-1], -1)
         gp_prob = probs[gp_token_id]

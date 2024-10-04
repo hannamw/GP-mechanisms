@@ -5,28 +5,17 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 #%%
 df = pd.read_csv('data_csv/gp_same_len.csv')
-<<<<<<< HEAD
 model_name = 'EleutherAI/pythia-70m-deduped'
-=======
-model_name = 'google/gemma-2-2b'
->>>>>>> 7c15a4745d8eb0fa796c47d0972f79c6c8f32e6f
 save_name = model_name.split('/')[-1]
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 model.cuda()
 #%%
-<<<<<<< HEAD
-=======
-
-post_token = ' was'
-post_token_id = model.tokenizer(post_token, add_special_tokens=False)['input_ids'][0]
->>>>>>> 7c15a4745d8eb0fa796c47d0972f79c6c8f32e6f
 for column in ['sentence_ambiguous','sentence_gp','sentence_post']:
     ambiguity = column.split('_')[1]
     gp_probs = []
     post_probs = []
     for sentence, condition in zip(df[column], df['condition']):
-<<<<<<< HEAD
         if condition == 'NPZ':
             gp_tokens = [',']
             # post_tokens = [' was',  ' had', ' did', ' would', ' will', ' should', ' might']
@@ -44,10 +33,6 @@ for column in ['sentence_ambiguous','sentence_gp','sentence_post']:
 
         gp_token_ids = [tokenizer(np, add_special_tokens=False)['input_ids'][0] for np in gp_tokens]
         post_token_ids = [tokenizer(z, add_special_tokens=False)['input_ids'][0] for z in post_tokens]
-=======
-        gp_token = ',' if 'NPZ' in condition  else '.'
-        gp_token_id = model.tokenizer(gp_token, add_special_tokens=False)['input_ids'][0]
->>>>>>> 7c15a4745d8eb0fa796c47d0972f79c6c8f32e6f
     
         tokens = tokenizer(sentence, return_tensors='pt')['input_ids'].cuda()
         probs = torch.softmax(model(tokens).logits.squeeze(0)[-1], -1)

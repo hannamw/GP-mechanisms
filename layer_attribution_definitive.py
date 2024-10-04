@@ -32,7 +32,7 @@ for condition in ['NPZ', 'NPS', 'MVRR']:
         gp_tokens = ['.']
         post_tokens = [' was',  ' had', ' did', ' would', ' will', ' should', ' might']
     elif condition == 'MVRR':
-        gp_tokens = ['.', ' to']
+        gp_tokens = ['.']
         post_tokens = [' was',  ' had', ' did', ' would', ' will', ' should', ' might']
     else:
         raise ValueError(f'Invalid condition: {condition}')
@@ -52,13 +52,14 @@ for condition in ['NPZ', 'NPS', 'MVRR']:
     tokens = tokenizer(filtered_df['sentence_ambiguous'].tolist(), return_tensors='pt').to('cuda').input_ids
     tokens = torch.cat((torch.full((tokens.size(0),1), tokenizer.bos_token_id, device='cuda'), tokens) , dim=-1)
 
-    for layer in ['embed', *range(6)]:
-        if layer == 'embed':
+    for layer_name in ['embed', *(f'resid_{i}' for i in range(6))]:
+        if layer_name == 'embed':
             submodules = [model.gpt_neox.embed_in]
             dictionaries = {model.gpt_neox.embed_in: dl.dictionary.AutoEncoder(512, 32768).to("cuda")}
             state_dict = torch.load(f'feature-circuits-gp/dictionaries/pythia-70m-deduped/embed/10_32768/ae.pt')
             dictionaries[model.gpt_neox.embed_in].load_state_dict(state_dict)        
         else:
+            layer = int(layer_name.split('_')[-1])
             submodules = [model.gpt_neox.layers[layer]]
             dictionaries = {model.gpt_neox.layers[layer]: dl.dictionary.AutoEncoder(512, 32768).to("cuda")}
             state_dict = torch.load(f'feature-circuits-gp/dictionaries/pythia-70m-deduped/resid_out_layer{layer}/10_32768/ae.pt')
@@ -76,10 +77,42 @@ for condition in ['NPZ', 'NPS', 'MVRR']:
         )
         
         mean_effects = list(effects.values())[0].act.mean(0)
-        scores[condition][layer] = mean_effects.cpu()
+        scores[condition][layer_name] = mean_effects.cpu()
 #%%
 torch.save(scores, f'results/{model_name_noslash}/feature_scores.pt')
 #%%
-top_features = {condition: {layer: scores.abs().topk(20) for layer, scores in layer_scores.items()} for condition, layer_scores in scores.items()}
+top_features = {condition: {layer: scores.abs().topk(20).indices for layer, scores in layer_scores.items()} for condition, layer_scores in scores.items()}
 torch.save(top_features, f'results/{model_name_noslash}/topk_features.pt')
+# %%
+topk_whole_model = {}
+topk_verbs = {}
+topk_nouns = {}
+for condition, layer_scores in scores.items():
+    stacked_scores = torch.stack(list(layer_scores.values()), dim=0) # layer, position, features
+    top50_indices = stacked_scores.abs().view(-1).topk(50).indices
+    top50_indices_unraveled = torch.unravel_index(top50_indices, stacked_scores.shape)
+    top50_values = stacked_scores[top50_indices_unraveled]
+    #top50_dict = {f'{pos}_layer{layer - 1 if layer > 0 else "embed"}_{feature}': value for layer, pos, feature, value in zip(*top50_indices_unraveled, top50_values)}
+    topk_whole_model[condition] = (*top50_indices_unraveled, top50_values) #top50_dict
+    
+    verb_scores = stacked_scores[:, -3]
+    noun_scores = stacked_scores[:, -1]
+    top50_verb_indices = verb_scores.abs().view(-1).topk(50).indices
+    top50_noun_indices = noun_scores.abs().view(-1).topk(50).indices
+    
+    top50_verb_indices_unraveled = torch.unravel_index(top50_verb_indices, verb_scores.shape)
+    top50_noun_indices_unraveled = torch.unravel_index(top50_noun_indices, noun_scores.shape)
+    
+    top50_verb_values = verb_scores[top50_verb_indices_unraveled]
+    top50_noun_values = noun_scores[top50_noun_indices_unraveled]
+    
+    #top50_verb_dict = {f'layer{layer - 1 if layer > 0 else "embed"}_{feature}': value.item() for layer, feature, value in zip(*top50_verb_indices_unraveled, top50_verb_values)}
+    #top50_noun_dict = {f'layer{layer - 1 if layer > 0 else "embed"}_{feature}': value.item() for layer, feature, value in zip(*top50_noun_indices_unraveled, top50_noun_values)}
+    
+    topk_verbs[condition] = (*top50_verb_indices_unraveled, top50_verb_values) #top50_verb_dict
+    topk_nouns[condition] = (*top50_noun_indices_unraveled, top50_noun_values) #top50_noun_dict
+# %%
+torch.save(topk_whole_model, f'results/{model_name_noslash}/top50_whole_model.pt')
+torch.save(topk_verbs, f'results/{model_name_noslash}/top50_verbs.pt')
+torch.save(topk_nouns, f'results/{model_name_noslash}/top50_nouns.pt')
 # %%

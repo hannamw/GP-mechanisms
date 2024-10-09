@@ -1,0 +1,180 @@
+Position,Feature,Annotation,Category
+0,embed/13487,"the word ""The""",word detector
+2,embed/3112,"the word ""reported""",word detector
+2,embed/4503,"the word ""knew""",word detector
+2,embed/16953,(no activations),no activations
+2,embed/17378,"the word ""discovered""",word detector
+2,embed/22408,(no activations),no activations
+2,embed/31806,(no activations),no activations
+3,embed/12877,"the word ""the""",word detector
+3,embed/32375,"the word ""the""",word detector
+4,embed/5944,"the word ""treatment""",word detector
+4,embed/7375,"the word ""position""",word detector
+4,embed/11773,"the word ""grant""",word detector
+4,embed/21701,"the word ""service""",word detector
+4,embed/26238,"the word ""operation""",word detector
+0,attn_0/1721,"""The""",word detector
+0,attn_0/24688,"""The""",word detector
+1,attn_0/6052,"the word ""world"" and ""first""",word detector
+2,attn_0/23029,?,unclear
+2,attn_0/24504,Text at the start of sentences,irrelevant
+3,attn_0/1457,"the word ""the""",word detector
+3,attn_0/1721,"""The""",word detector
+3,attn_0/6120,"(unclear, articles?)",unclear
+3,attn_0/6485,"(unclear - ""the""?)",unclear
+3,attn_0/14747,"""the"" and words that follow (decreasing intensity)",irrelevant
+3,attn_0/16448,"the word ""the"" before object nouns",noun detector
+3,attn_0/22726,"NPs starting with ""The""",noun detector
+3,attn_0/27332,"the word ""the"" and ""and""",word detector
+3,attn_0/28637,"(unclear, text spans after <BOS>)",unclear
+2,mlp_0/10,"the word ""reported""",word detector
+2,mlp_0/1892,"the word ""claimed""",word detector
+2,mlp_0/23405,"the word ""noticed""",word detector
+2,mlp_0/23598,"the word ""showed""",word detector
+3,mlp_0/4440,"the word ""the""",word detector
+3,mlp_0/21469,"the word ""the""",word detector
+3,mlp_0/25816,"the word ""the""",word detector
+3,mlp_0/26862,"the word ""the""",word detector
+4,mlp_0/3068,"the word ""service""",word detector
+4,mlp_0/3932,"the word ""grant""",word detector
+4,mlp_0/5202,"the word ""operation""",word detector
+4,mlp_0/5802,(no activations),no activations
+4,mlp_0/9066,"the word ""position""",word detector
+4,mlp_0/14220,"the word ""job""",word detector
+4,mlp_0/19918,"the word ""bill""",word detector
+4,mlp_0/24015,"the word ""file""",word detector
+4,mlp_0/25411,"the word ""oven"" ",word detector
+0,resid_0/11082,"all tokens in NP after "" the""",noun detector
+0,resid_0/11999,"""The"", ""Your"", ""Those""",word detector
+0,resid_0/29334,"NPs starting with ""The""",noun detector
+1,resid_0/2514,"the word ""patient""",word detector
+1,resid_0/11082,"all tokens in NP after "" the""",noun detector
+1,resid_0/16341,"the word ""professor""",word detector
+2,resid_0/9877,"the word ""reported""",word detector
+2,resid_0/11901,"the word ""found""",word detector
+2,resid_0/13777,"the word ""noticed""",word detector
+2,resid_0/15177,"all tokens in NP after ""The""",noun detector
+2,resid_0/15625,(unclear),unclear
+2,resid_0/22260,(unclear),unclear
+2,resid_0/23497,(unclear),unclear
+2,resid_0/26900,(unclear),unclear
+2,resid_0/27199,"the word ""showed""",word detector
+2,resid_0/29663,"the word ""demonstrate""",word detector
+2,resid_0/32458,"the word ""discovered""",word detector
+3,resid_0/2538,(unclear),unclear
+3,resid_0/6073,""" the""",word detector
+3,resid_0/8234,"""the""",word detector
+3,resid_0/10384,"the word ""and""",word detector
+3,resid_0/10952,"the word ""the""",word detector
+3,resid_0/11999,"""The"", ""Your"", ""Those""",word detector
+3,resid_0/13931,(unclear - articles and pronouns?),unclear
+3,resid_0/22802,"the words ""a(n)"", ""the""",word detector
+3,resid_0/28531,"years and nouns after "" the""/""The""",word detector
+3,resid_0/28550,"the word after ""say""",irrelevant
+3,resid_0/29334,"NPs starting with ""The""",noun detector
+4,resid_0/492,(unclear),unclear
+4,resid_0/1782,"the word ""contract""",word detector
+4,resid_0/2785,"the word ""operation""",word detector
+4,resid_0/7095,"the word ""treatment""",word detector
+4,resid_0/15177,"all tokens in NP after ""The""",noun detector
+4,resid_0/20528,(unclear - object nouns/nouns in PPs),unclear
+4,resid_0/22260,(unclear),unclear
+4,resid_0/23497,(unclear),unclear
+4,resid_0/24915,"text after <EOT>, excluding prepositions / conjunctions",unclear
+4,resid_0/25601,text about injury and illness,irrelevant
+4,resid_0/32465,"the word ""grant""",word detector
+0,attn_1/3677,(unclear),unclear
+4,attn_1/11958,<EOT> and following text,irrelevant
+4,attn_1/20931,"(unclear, dense)",unclear
+4,attn_1/24880,"(unclear, dense)",unclear
+0,mlp_1/18722,"""The""",word detector
+0,mlp_1/25477,"""The"" and proper NPs",word detector
+2,mlp_1/14345,(unclear),unclear
+3,mlp_1/14093,"the word ""the"" or ""it""",word detector
+3,mlp_1/25477,"""The"" and proper NPs",word detector
+3,mlp_1/26575,"the word ""the""",word detector
+4,mlp_1/11172,"the word ""treatment""",word detector
+4,mlp_1/14583,nouns (mostly subjects),noun detector
+1,resid_1/17748,"the word ""defendant""",word detector
+2,resid_1/1672,"the word ""showed""",word detector
+2,resid_1/1880,"(unclear, maybe verbs, messily)",unclear
+2,resid_1/3151,(unclear - highest on VPs?),unclear
+2,resid_1/11047,"the word ""reported""",word detector
+2,resid_1/18111,"inflections of ""realize""",word detector
+2,resid_1/30674,past-tense verbs (policy-related),verb detector
+3,resid_1/363,"(unclear, often ""the"")",unclear
+3,resid_1/1599,"the word ""the"" after ""that""",word detector
+3,resid_1/7405,"the word ""the""",word detector
+3,resid_1/18354,""" the""",word detector
+3,resid_1/25687,"the word ""a"" and other articles",word detector
+4,resid_1/1066,"singular nouns after "" the""",noun detector
+4,resid_1/3151,(unclear - highest on VPs?),unclear
+4,resid_1/15319,"the word ""grant""",word detector
+4,resid_1/23045,"the word ""service""",word detector
+4,resid_1/23355,(unclear),unclear
+4,resid_1/30575,"the word ""treatment""",word detector
+4,resid_1/32230,"the word ""file""",word detector
+1,attn_2/26801,(unclear),unclear
+2,attn_2/4468,(unclear),unclear
+3,attn_2/4468,(unclear),unclear
+3,attn_2/17555,verbs and their object NPs,verb detector
+3,attn_2/26801,(unclear),unclear
+4,attn_2/4468,(unclear),unclear
+4,attn_2/6175,in/direct objects and nouns in prepositional phrases,object detector
+3,mlp_2/5952,"the word ""the""",word detector
+1,resid_2/18575,"NPs starting with ""The""",noun detector
+2,resid_2/7904,verbs that can take sentential complements,CP verb detector
+2,resid_2/18979,verbs that can take sentential complements,CP verb detector
+2,resid_2/30888,"""said"" and similar",word detector
+3,resid_2/4508,subjects of sentential clauses,subject detector
+3,resid_2/9205,""" the"" after prepositions, ""that"", or commas",word detector
+3,resid_2/18575,"NPs starting with ""The""",noun detector
+3,resid_2/19897,"the word ""The"", especially at the start of a sentence",word detector
+3,resid_2/22620,"the word after past-tense verbs (especially ""did"" or ""made"")",irrelevant
+3,resid_2/30264,"the word ""the"" before objects",object detector
+4,resid_2/646,text about injury / illness,irrelevant
+4,resid_2/5912,noun detector?,noun detector
+4,resid_2/18575,"NPs starting with ""The""",noun detector
+4,resid_2/24003,"nouns in PPs, RCs, and subordinate clauses",noun detector
+4,resid_2/25782,"the word ""service""",word detector
+4,attn_3/9195,all tokens in RCs,clause detector
+4,attn_3/10523,"activates on the sentence's subject, from ""the"" to the token it must agree with",
+4,attn_3/15295,"activates on ""said"" and text following it",clause detector
+4,attn_3/17936,in/direct objects and nouns in prepositional phrases,object detector
+4,attn_3/26745,nouns,noun detector
+4,attn_3/28453,final token of PPs,object detector
+4,mlp_3/6185,object nouns / nouns in PPs?,object detector
+4,mlp_3/13536,"the word ""company""",word detector
+4,mlp_3/18112,object nouns,object detector
+4,mlp_3/27741,"URLs with "".""s",irrelevant
+2,resid_3/24386,"the word ""point out"", ""aware"", ""argue""",CP verb detector
+4,resid_3/3314,in/direct objects and nouns in prepositional phrases,object detector
+4,resid_3/3536,end of noun detector,noun detector
+4,resid_3/10842,subject detector,subject detector
+4,resid_3/11480,noun detector,noun detector
+4,resid_3/17846,subject detector,subject detector
+4,resid_3/18008,objects inside RCs and PPs,object detector
+4,resid_3/22016,detects subject nouns,subject detector
+4,resid_3/23705,"""said"" and text thereafter",clause detector
+4,resid_3/25908,"the word ""job"" and related",word detector
+4,resid_3/31569,text in CP,clause detector
+2,mlp_4/25636,words that could precede sentential clauses ,CP verb detector
+2,resid_4/26449,"the words ""appears"", ""assume"", ""suggests"" (take sentential complements)",CP verb detector
+4,resid_4/19256,"X in "", with X Ying...""",irrelevant
+4,resid_4/19445,"(object) nouns, often in PPs",object detector
+4,resid_4/27015,"spans after ""The""",irrelevant
+4,resid_4/27354,last token of main subject noun detector,subject detector
+4,resid_4/31262,"subjects after ""said (that)"", messily",subject detector
+4,resid_4/31725,(limited set of) subject nouns,subject detector
+4,resid_5/899,gibberish,unclear
+4,resid_5/4729,"singular subjects preceded by ""The""",subject detector
+4,resid_5/5151,last token of subject NP,subject detector
+4,resid_5/10906,"""question"", ""answer"", ""issue"", ""point"", ""claim""",word detector
+4,resid_5/11189,"first subj + verb after ""said"" or similar",clause detector
+4,resid_5/19665,(unclear),unclear
+4,resid_5/20284,"subjects after ""The"" or "" the""",subject detector
+4,resid_5/30181,subject nouns,subject detector
+4,resid_5/31007,"(singular) subject nouns, words at ends of NPs",subject detector
+4,resid_5/31040,objects of verbs,object detector
+4,resid_5/31283,subject nouns,subject detector
+4,resid_5/32531,subject nouns,subject detector

@@ -1,0 +1,85 @@
+Position,Feature,Annotation,Category
+3,embed/3347,"the word ""read""",word detector
+3,embed/8178,"the word ""called""",word detector
+3,embed/14209,"the word ""started""",word detector
+5,embed/5944,"the word ""treatment""",word detector
+5,embed/26238,"the word ""operation""",word detector
+5,embed/30316,"the word ""file""",word detector
+1,attn_0/1457,"the word ""the""",word detector
+1,attn_0/6485,"(unclear - ""the""?)",unclear
+1,attn_0/14747,"""the"" and words that follow (decreasing intensity)",irrelevant
+2,attn_0/6052,"the word ""world"" and ""first""",word detector
+4,attn_0/1457,"the word ""the""",word detector
+4,attn_0/6485,"(unclear - ""the""?)",unclear
+4,attn_0/14747,"""the"" and words that follow (decreasing intensity)",irrelevant
+5,attn_0/7768,(unclear),unclear
+1,mlp_0/4440,"the word ""the""",word detector
+1,mlp_0/26862,"the word ""the""",word detector
+2,mlp_0/18945,"the word ""boy""",word detector
+3,mlp_0/5618,"the word ""read""",word detector
+3,mlp_0/9920,"the word ""left""",word detector
+3,mlp_0/17131,"the word ""lost""",word detector
+3,mlp_0/28281,"the word ""started""",word detector
+3,mlp_0/28372,"the word ""worked""",word detector
+4,mlp_0/4440,"the word ""the""",word detector
+4,mlp_0/26862,"the word ""the""",word detector
+5,mlp_0/1899,(no activations),no activations
+5,mlp_0/3068,"the word ""service""",word detector
+5,mlp_0/3932,"the word ""grant""",word detector
+5,mlp_0/22854,"the word ""contract""",word detector
+5,mlp_0/24015,"the word ""file""",word detector
+0,resid_0/12301,"the word ""Once"", starting a sentence",word detector
+0,resid_0/31915,"the word ""Before""",word detector
+1,resid_0/6073,""" the""",word detector
+1,resid_0/28531,"years and nouns after "" the""/""The""",noun detector
+2,resid_0/11082,"all tokens in NP after "" the""",noun detector
+3,resid_0/15413,"the word ""began""",word detector
+4,resid_0/6073,""" the""",word detector
+4,resid_0/8234,"""the""",word detector
+5,resid_0/1782,"the word ""contract""",word detector
+5,resid_0/2785,"the word ""operation""",word detector
+5,resid_0/7095,"the word ""treatment""",word detector
+5,resid_0/11082,"all tokens in NP after "" the""",noun detector
+5,resid_0/32465,"the word ""grant""",word detector
+5,mlp_1/11172,"the word ""treatment""",word detector
+1,resid_1/18354,""" the""",word detector
+2,resid_1/17748,"the word ""defendant""",word detector
+3,resid_1/157,past-tense verbs,verb detector
+3,resid_1/10710,text in PPs/subordinate clauses,in-clause detector
+3,resid_1/11836,"the word ""left""",word detector
+3,resid_1/18996,"Words after ""after""",word detector
+3,resid_1/29481,"the word ""worked""",word detector
+3,resid_1/30674,past-tense verbs (policy-related),verb detector
+4,resid_1/18354,""" the""",word detector
+4,resid_1/20275,"the word ""the"" before object nouns",object detector
+5,resid_1/7779,text in recipes,irrelevant
+5,resid_1/22751,"the word ""contract""",word detector
+5,resid_1/30575,"the word ""treatment""",word detector
+5,resid_1/32230,"the word ""file""",word detector
+4,mlp_2/5952,"the word ""the""",word detector
+3,resid_2/27894,past-tense verbs,verb detector
+5,resid_2/5300,"the word ""money""",word detector
+5,resid_2/9337,"words related to announcements, permission, decisions",word detector
+5,resid_2/30666,"the word ""Award""",word detector
+5,resid_2/32364,"the word ""file""",word detector
+5,attn_3/8236,activates in adverbial phrases,in-clause detector
+5,mlp_3/9089,"the word ""cat""",word detector
+5,mlp_3/18112,object nouns,object detector
+3,resid_3/2734,past tense verbs,verb detector
+5,resid_3/3314,in/direct objects and nouns in prepositional phrases,object detector
+5,resid_3/3536,end of noun detector,noun detector
+5,resid_3/7315,VP detector,verb detector
+5,resid_3/10842,subject detector,subject detector
+5,resid_3/18008,objects inside RCs and PPs,object detector
+5,resid_3/18923,text within subordinate clauses / prepositional phrases,in-clause detector
+5,resid_3/22016,detects subject nouns,subject detector
+5,mlp_4/14691,"the word ""treatment""",word detector
+5,mlp_4/31934,objects / nouns in PPs,object detector
+5,mlp_4/32102,end of clause detector,clause detector
+3,resid_4/32454,"""started/began""",word detector
+5,resid_4/3960,nouns in prepositional phrases,object detector
+5,resid_4/6319,nouns in general,noun detector
+5,resid_4/14907,ends of various clauses,end-clause detector
+5,resid_4/19445,"(object) nouns, often in PPs",object detector
+5,resid_4/31725,(limited set of) subject nouns,subject detector
+5,resid_5/26622,end of clause detector,end-clause detector

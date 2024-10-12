@@ -1,15 +1,21 @@
 #%%
 from typing import List, Dict, Iterable, Tuple
 from collections import defaultdict
+from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import torch
 from tqdm import tqdm
 from nnsight import LanguageModel
 from transformers import AutoTokenizer
 from sae_lens import SAE
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 from dictionary_learning import dictionary
             
+sns.set_style("whitegrid")
 
 def get_performance(model:LanguageModel, prompts: Iterable[str], indices,  dictionaries:Dict, features:Dict[str, List[Tuple]]) -> torch.Tensor:
     """
@@ -122,9 +128,6 @@ if __name__ == '__main__':
     model_name ="EleutherAI/pythia-70m-deduped"
     model_name_noslash = model_name.split('/')[-1]
     dataset_name = "data_csv/gp_same_len.csv"
-    
-    upweight_categories = ['subject detector']
-    downweight_categories = ['object detector']
 
     df = pd.read_csv(dataset_name)
     tokenizer = AutoTokenizer.from_pretrained(model_name, add_bos_token=False)
@@ -137,16 +140,23 @@ if __name__ == '__main__':
     elif 'gemma' in model_name:
         all_submodule_names = [*(f'{module}_' + str(i) for i in range(26) for module in ['attn', 'mlp', 'resid'])]
     dictionaries = {submodule_name: (submodule_name_to_submodule(model_name, submodule_name), load_autoencoder(model_name, submodule_name)) for submodule_name in all_submodule_names}
+    
+    dict_size = dictionaries['resid_0'].cfg.d_sae if 'gemma' in model_name else dictionaries['resid_0'][1].dict_size
 
     baseline_probabilities = {}
     intervened_probabilities = {}
-    for condition in ['NPZ']:#, 'NPS']:
+    random_probabilities = {}
+    for condition in ['NPZ', 'NPS']:
         if condition == 'NPZ':
             gp_tokens = [',']
             post_tokens = [' was']
+            upweight_categories = ['subject detector']
+            downweight_categories = ['object detector']
         else:
             gp_tokens = ['.']
             post_tokens = [' was']
+            upweight_categories = ['object detector']
+            downweight_categories = ['subject detector', 'CP verb detector']
 
         gp_token_ids = [tokenizer(tok, add_special_tokens=False)['input_ids'][0] for tok in gp_tokens]
         post_token_ids = [tokenizer(tok, add_special_tokens=False)['input_ids'][0] for tok in post_tokens]
@@ -155,16 +165,56 @@ if __name__ == '__main__':
         baseline_gp, baseline_nongp = get_performance(model, condition_df['sentence_ambiguous'].tolist(), indices, dictionaries, defaultdict(list))  
         
         highlevel_features = defaultdict(list)
-        noun_df = pd.read_csv(f'results/{model_name_noslash}/{condition.lower()}_features.csv')
-        for position, feature, category in zip(noun_df['Position'], noun_df['Feature'], noun_df['Category']):
+        random_features = defaultdict(list)
+        feature_df = pd.read_csv(f'results/{model_name_noslash}/{condition.lower()}_features.csv')
+        feature_submodule_names, feature_idxs =  zip(*[feature.split('/') for feature in feature_df['Feature']])
+        feature_df['submodule_name'] = feature_submodule_names
+        feature_df['feature_idx'] = [int(x) for x in feature_idxs]
+        
+        annotated_features = defaultdict(list)
+        for subname, idx in zip(feature_df['submodule_name'], feature_df['feature_idx']):
+            annotated_features[subname].append(idx)
+            
+        mapping = defaultdict(dict)
+        for subname, idxs in annotated_features.items():
+            candidates = torch.randperm(dict_size)
+            i = 0
+            for j in idxs:
+                while candidates[i].item() in annotated_features[subname]:
+                    i += 1
+                mapping[subname][j] = candidates[i].item()
+                
+        
+        for position, feature, category in zip(feature_df['Position'], feature_df['Feature'], feature_df['Category']):
             submodule_name, feature_idx = feature.split('/')
             feature_idx = int(feature_idx)
-            if category in downweight_categories:
+            random_feature_idx = mapping[submodule_name][feature_idx]
+            if category == 'end of clause detector':
+                highlevel_features[submodule_name].append((-3, feature_idx, 2.0))
+                highlevel_features[submodule_name].append((-2, feature_idx, 0.0))
+                highlevel_features[submodule_name].append((-1, feature_idx, 0.0))
+                
+                random_features[submodule_name].append((-3, random_feature_idx, 2.0))
+                random_features[submodule_name].append((-2, random_feature_idx, 0.0))
+                random_features[submodule_name].append((-1, random_feature_idx, 0.0))
+            elif category in downweight_categories:
                 highlevel_features[submodule_name].append((position, feature_idx, 0.))
+                
+                random_features[submodule_name].append((position, random_feature_idx, 0.))
             elif category in upweight_categories:
                 highlevel_features[submodule_name].append((position, feature_idx, 2.0))
+                
+                random_features[submodule_name].append((position, random_feature_idx, 2.0))
             
         intervened_gp, intervened_nongp = get_performance(model, condition_df['sentence_ambiguous'].tolist(), indices, dictionaries, highlevel_features)
-        
+        random_gp, random_nongp = get_performance(model, condition_df['sentence_ambiguous'].tolist(), indices, dictionaries, random_features)
         baseline_gp, baseline_nongp = get_performance(model, condition_df['sentence_ambiguous'].tolist(), indices, dictionaries, defaultdict(list))
-# %%
+        
+        intervened_probabilities[condition] = (intervened_gp, intervened_nongp)
+        random_probabilities[condition] = (random_gp, random_nongp)
+        baseline_probabilities[condition] = (baseline_gp, baseline_nongp)
+        
+all_probabilities = {'intervened': intervened_probabilities, 'baseline': baseline_probabilities, 'random': random_probabilities}
+Path(f'results/{model_name_noslash}').mkdir(exist_ok=True, parents=True)
+torch.save(all_probabilities, f'results/{model_name_noslash}/causal_probabilities.pt')
+    

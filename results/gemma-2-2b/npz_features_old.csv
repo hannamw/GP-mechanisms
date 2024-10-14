@@ -19,9 +19,9 @@ Position,Feature,Annotation,Category
 3,resid_0/8815,singular profession names,noun detector
 3,resid_0/11654,"various inflections of ""manage"", incl. ""manager""",word detector
 3,resid_1/8815,profession names,noun detector
-3,resid_2/8340,animate nouns,noun detector
-3,resid_0/1442,"tokens containing ""work""",word detector
-4,resid_0/3763,"tokens relating to leaving, departing","verb detector"""
+,resid_2/8340,animate nouns,noun detector
+,resid_0/1442,"tokens containing ""work""",word detector
+4,resid_0/3763,"tokens relating to leaving, departing",verb detector"
 4,resid_0/9352,"tokens relating to leaving, departing",verb detector
 4,resid_0/11493,"tokens relating to starting, beginning",verb detector
 4,resid_0/9352,"tokens relating to leaving, departing",verb detector
@@ -41,7 +41,7 @@ Position,Feature,Annotation,Category
 4,resid_7/3528,all tokens in subordinate clauses from subject noun on,in-clause detector
 4,resid_7/5573,verbs that can take clauses/infinitives as objects,verb detector
 4,resid_7/10055,transitive verbs,verb detector
-4,resid_8/5086,all tokens in subordinate clauses from subject noun on,in-clause detector
+4,resid_8/5086,all tokens in subordinate clauses from subject noun on,in-clasue detector
 4,resid_8/5157,verbs that can take NPs followed by PP complements,verb detector
 4,resid_8/15254,transitive verbs,verb detector
 4,resid_9/6043,transitive verbs,verb detector
@@ -69,42 +69,39 @@ Position,Feature,Annotation,Category
 5,resid_3/2007,""" the"" and ""The""",word detector
 5,resid_4/15634,"""the"" in objects/PPs",object detector
 5,resid_5/7423,""" The""",word detector
-5,resid_6/1584,""" the"" after prepositions",word detector
-5,resid_7/2390,""" the"" after prepositions",word detector
-5,resid_8/8153,"""The"" at start of sentence and "" the"" in PPs",word detector
-5,resid_9/7951,""" the"" in PPs",word detector
-5,resid_10/15167,""" the"" in PPs",word detector
-5,resid_11/1349,""" the"" in PPs",word detector
-5,resid_12/5511,"""The"" in subordinate clauses and PPs",word detector
-5,resid_13/10831,""" the"" in PPs",word detector
-5,resid_14/11930,""" the"" in PPs",word detector
+5,resid_6/1584,""" the"" after prepositions",object detector
+5,resid_7/2390,""" the"" after prepositions",object detector
+5,resid_8/8153,"""The"" at start of sentence and "" the"" in objects",object detector
+5,resid_9/7951,""" the"" in PPs and objects",object detector
+5,resid_10/15167,""" the"" in PPs and objects",object detector
+5,resid_11/1349,""" the"" in PPs and objects",object detector
+5,resid_12/5511,"""The"" in subordinate clauses and PPs",object detector
+5,resid_13/10831,""" the"" in PPs and objects",object detector
+5,resid_14/11930,""" the"" in PPs",object detector
 6,resid_5/14043,"nouns after ""the""",noun detector
-6,resid_12/7507,(unclear),(unclear)
-6,resid_13/15319,(unclear),(unclear)
+6,resid_12/7507,clause boundary detector,end-clause detector
+6,resid_13/15319,clause boundary detector,end-clause detector
 6,resid_14/7214,?,unclear
-6,resid_15/8610,(unclear),(unclear)
-6,resid_16/10480,(unclear),(unclear)
+6,resid_15/8610,clause boundary detector,end-clause detector
+6,resid_16/10480,activates more strongly in subordinate clauses,in-clause detector
 6,attn_17/12358,verbs and their objects,object detector
-6,resid_17/7921,(unclear),(unclear)
-6,resid_18/15275,end of clause detector,end of clause detector
-6,resid_18/15394,(unclear),(unclear)
-6,resid_18/16017,subordinate clause boundary detector,end of clause detector
-6,resid_19/5825,(unclear),(unclear)
-6,resid_19/16227,PP boundary detector,end of clause detector
+6,resid_17/7921,NP/clause boundaries,end-clause detector
+6,resid_18/16017,subordinate clause boundary detector,end-clause detector
+6,resid_19/5825,predicts commas,end-clause detector
+6,resid_19/16227,PP boundary detector,end-clause detector
 6,attn_20/4118,prepositions and directly preceding nouns,noun detector
-6,resid_20/1548,subject detector,subject detector
-6,resid_20/3223,subordinate clause/PP boundary detector,end of clause detector
-6,resid_20/6143,predicts commas,(unclear)
-6,resid_21/13686,predicts commas,end of clause detector
-6,resid_22/8648,PP boundary detector,end of clause detector
-6,resid_23/8813,predicts past-tense verbs,subject detector
-6,resid_23/10307,predicts commas,object detector
-6,resid_23/14613,(unclear),(unclear)
-6,resid_24/3848,(unclear),(unclear)
-6,resid_24/12264,predicts commas,end of clause detector
+6,resid_20/3223,subordinate clause/PP boundary detector,end-clause detector
+6,resid_20/6143,predicts commas,end-clause detector
+6,resid_21/13686,predicts commas,end-clause detector
+6,resid_22/8648,PP boundary detector,end-clause detector
+6,resid_23/8813,predicts past-tense verbs,verb detector
+6,resid_23/10307,predicts commas,end-clause detector
+6,resid_23/14613,predicts reflexive pronouns,subject detector
+6,resid_24/3848,clause boundaries?,end-clause detector
+6,resid_24/12264,predicts commas,end-clause detector
 6,resid_24/16128,predicts past-tense verbs,subject detector
-6,resid_25/3420,(unclear),(unclear)
-6,resid_25/10150,(unclear),(unclear)
-6,resid_25/12264,predicts commas,object detector
-6,resid_25/14325,(unclear),(unclear)
+6,resid_25/3420,?,unclear
+6,resid_25/10150,?,unclear
+6,resid_25/12264,predicts commas,end-clause detector
+6,resid_25/14325,"clause boundaries, and many other things?",end-clause detector
 6,resid_25/15806,predicts past-tense verbs,subject detector

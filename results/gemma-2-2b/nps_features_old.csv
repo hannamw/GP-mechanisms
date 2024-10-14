@@ -1,0 +1,56 @@
+Position,Feature,Annotation,Category
+0,resid_9/381,tokens after BOS token,irrelevant
+0,resid_10/3736,BOS and first token after BOS,irrelevant
+0,resid_11/10772,BOS and first token after BOS,irrelevant
+0,resid_11/13423,BOS and first token after BOS,irrelevant
+0,mlp_12/2636,tokens after BOS token,irrelevant
+0,resid_12/11087,BOS and first token after BOS,irrelevant
+0,resid_13/4825,tokens after BOS token,irrelevant
+0,resid_14/16123,BOS and first token after BOS,irrelevant
+3,resid_3/2085,"inflections of ""show"" and ""demonstrate""",word detector
+3,resid_3/8143,past tense verbs,verb detector
+3,resid_16/4801,verbs that could be followed by RCs,CP verb detector
+4,resid_3/2007,""" the"" and ""The""",word detctor
+4,resid_4/15634,"""the"" in objects/PPs",object detector
+4,resid_5/7423,""" The""",word detector
+4,resid_6/1584,""" the"" after prepositions",object detector
+4,resid_7/2390,""" the"" after prepositions",object detector
+4,resid_8/8153,"""The"" at start of sentence and "" the"" in objects",word detector
+4,resid_9/7951,""" the"" in PPs and objects",object detector
+4,resid_10/15167,""" the"" in PPs and objects",object detector
+4,resid_11/1349,""" the"" in PPs and objects",object detector
+4,resid_12/5511,"""The"" in subordinate clauses and PPs",object detector
+4,resid_13/10831,""" the"" in PPs and objects",object detector
+4,resid_14/11930,""" the"" in PPs",object detector
+5,resid_16/1888,""" the"" in PPs and objects",object detector
+5,resid_17/10830,""" the"" in subjects",subject detector
+5,resid_10/1205,nouns as objects or in PPs,object detector
+5,resid_17/7921,NP/clause boundaries,clause detector
+5,resid_17/14124,nouns that could be subjects in RCs,clause detector
+5,attn_18/521,verbs and subjects of their RC objects,CP verb detector
+5,attn_18/7563,clause/VP/NP boundaries?,clause detector
+5,mlp_18/5170,verbs that could be followed by RCs,CP verb detector
+5,resid_18/8153,singular NPs,word detector
+5,resid_18/10213,verbs that can be followed by aux verbs,CP verb detector
+5,resid_18/15275,clause boundary detector,clause detector
+5,resid_18/15612,clause boundary detector,clause detector
+5,resid_19/3254,promotes singular verbs,subject detector
+5,resid_20/1548,predicts past-tense verbs,unclear
+5,resid_20/7182,predicts singular verbs,subject detector
+5,resid_21/4435,clause boundary detector,clause detector
+5,resid_21/6162,singular subjects,subject detector
+5,resid_21/15301,predicts verbs in subordinate or relative clauses,clause detector
+5,resid_22/4189,singular subjects,subject detector
+5,resid_22/5384,clause boundary detector,clause detector
+5,resid_22/6359,clause boundary detector,clause detector
+5,resid_23/7507,singular subjects,subject detector
+5,resid_23/7655,clause boundary detector,clause detector
+5,resid_23/8813,predicts past-tense verbs,subject detector
+5,mlp_24/282,?,unclear
+5,mlp_24/9329,?,unclear
+5,resid_24/3848,clause boundaries?,unclear
+5,resid_24/16128,predicts past-tense verbs,subject detector
+5,resid_25/980,promotes singular verbs,subject detector
+5,resid_25/13580,clause boundaries,clause detector
+5,resid_25/14325,"clause boundaries, and many other things?",clause detector
+5,resid_25/15806,predicts past-tense verbs,subject detector

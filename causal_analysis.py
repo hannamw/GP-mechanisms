@@ -19,8 +19,7 @@ from dictionary_learning import dictionary
             
 sns.set_style("whitegrid")
 
-def get_performance(model:LanguageModel, prompts: Iterable[str], indices,  dictionaries:Dict, features:Dict[str, List[Tuple]],
-                    use_inputs = None) -> torch.Tensor:
+def get_performance(model:LanguageModel, prompts: Iterable[str], indices,  dictionaries:Dict, features:Dict[str, List[Tuple]], use_inputs = None) -> torch.Tensor:
     """
     model: LanguageModel
     prompt: Iterable[str]
@@ -59,7 +58,7 @@ def get_performance(model:LanguageModel, prompts: Iterable[str], indices,  dicti
 
                 f_new = torch.clone(f)
                 feature_pos, feature_list, feature_values = zip(*features[submodule_name])
-                f_new[:, feature_pos, feature_list] = torch.tensor(feature_values, device='cuda').to(torch.bfloat16)
+                f_new[:, feature_pos, feature_list] = torch.tensor(feature_values, device='cuda').to(model.dtype)
                 x_hat = ae.decode(f_new)
                 if use_inputs[submodule]:
                     submodule.input[0][0][:] = x_hat + residual
@@ -178,18 +177,20 @@ def load_autoencoder(model_name, submodule_name):
             ae_path = f"feature-circuits-gp/dictionaries/pythia-70m-deduped/{submod_type}_out_layer{layer_idx}/10_32768/ae.pt"
             ae = dictionary.AutoEncoder(512, 32768).to("cuda")
             ae.load_state_dict(torch.load(open(ae_path, "rb")))
-            ae = ae.half()
+            #ae = ae.half()
         elif 'gemma' in model_name:
             ae = load_gemma_sae(submod_type, int(layer_idx)).to("cuda")
             ae = ae.to(torch.bfloat16)
     return ae
 
 if __name__ == '__main__':
-    # model_name ="EleutherAI/pythia-70m-deduped"
-    model_name = "google/gemma-2-2b"
+    model_name ="EleutherAI/pythia-70m-deduped"
+    #model_name = "google/gemma-2-2b"
     model_name_noslash = model_name.split('/')[-1]
     dataset_name = "data_csv/gp_same_len.csv"
     dtype = torch.bfloat16 if model_name.startswith("google/") else torch.float32
+    
+    high_value = 100.0 if 'gemma' in model_name else 2.0
 
     df = pd.read_csv(dataset_name)
     # tokenizer = AutoTokenizer.from_pretrained(model_name, add_bos_token=False)
@@ -204,7 +205,6 @@ if __name__ == '__main__':
         all_submodule_names = [*(f'{module}_' + str(i) for i in range(26) for module in ['attn', 'mlp', 'resid'])]
     dictionaries = {submodule_name: (submodule_name_to_submodule(model_name, submodule_name), load_autoencoder(model_name, submodule_name)) for submodule_name in tqdm(all_submodule_names, desc="Loading submodules", total=len(all_submodule_names))}
 
-    # dict_size = dictionaries['resid_0'].cfg.d_sae if 'gemma' in model_name else dictionaries['resid_0'][1].dict_size
     dict_size = dictionaries['resid_0'][1].dict_size
 
     baseline_probabilities = {}
@@ -219,7 +219,7 @@ if __name__ == '__main__':
         else:
             gp_tokens = ['.']
             post_tokens = [' was']
-            upweight_categories = ['object detector']
+            upweight_categories = ['object detector', 'end of sentence detector']
             downweight_categories = ['subject detector', 'CP verb detector']
 
         gp_token_ids = [tokenizer(tok, add_special_tokens=False)['input_ids'][0] for tok in gp_tokens]
@@ -254,11 +254,11 @@ if __name__ == '__main__':
             feature_idx = int(feature_idx)
             random_feature_idx = mapping[submodule_name][feature_idx]
             if category == 'end of clause detector':
-                highlevel_features[submodule_name].append((-3, feature_idx, 2.0))
+                highlevel_features[submodule_name].append((-3, feature_idx, high_value))
                 highlevel_features[submodule_name].append((-2, feature_idx, 0.0))
                 highlevel_features[submodule_name].append((-1, feature_idx, 0.0))
                 
-                random_features[submodule_name].append((-3, random_feature_idx, 2.0))
+                random_features[submodule_name].append((-3, random_feature_idx, high_value))
                 random_features[submodule_name].append((-2, random_feature_idx, 0.0))
                 random_features[submodule_name].append((-1, random_feature_idx, 0.0))
             elif category in downweight_categories:
@@ -266,9 +266,9 @@ if __name__ == '__main__':
                 
                 random_features[submodule_name].append((position, random_feature_idx, 0.))
             elif category in upweight_categories:
-                highlevel_features[submodule_name].append((position, feature_idx, 2.0))
+                highlevel_features[submodule_name].append((position, feature_idx, high_value))
                 
-                random_features[submodule_name].append((position, random_feature_idx, 2.0))
+                random_features[submodule_name].append((position, random_feature_idx, high_value))
             
         intervened_gp, intervened_nongp = get_performance(model, condition_df['sentence_ambiguous'].tolist(), indices, dictionaries, highlevel_features)
         random_gp, random_nongp = get_performance(model, condition_df['sentence_ambiguous'].tolist(), indices, dictionaries, random_features)
@@ -282,3 +282,5 @@ all_probabilities = {'intervened': intervened_probabilities, 'baseline': baselin
 Path(f'results/{model_name_noslash}').mkdir(exist_ok=True, parents=True)
 torch.save(all_probabilities, f'results/{model_name_noslash}/causal_probabilities.pt')
     
+
+# %%

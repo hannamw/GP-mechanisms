@@ -9,6 +9,7 @@ import torch
 sns.set_style("whitegrid")
 
 model_name = 'pythia-70m-deduped'
+# model_name = 'gemma-2-2b'
 d = torch.load(f'../results/{model_name}/causal_probabilities.pt')
 
 model_name_mapping = {'pythia-70m-deduped': 'Pythia-70m', 'gemma-2-2b': 'Gemma-2-2B'}
@@ -23,7 +24,7 @@ multiplier = 0
 fig, ax =  plt.subplots(figsize=(7,3))
 #colors = ['lightcoral', 'firebrick', 'palegoldenrod', 'goldenrod', 'lightskyblue', 'dodgerblue']
 colors = ['lightcoral', 'palegoldenrod', 'lightskyblue', 'firebrick', 'goldenrod', 'dodgerblue']
-colors = ['olivedrab', 'mediumslateblue', 'orchid', 'darkolivegreen', 'darkslateblue', 'darkorchid']
+colors = ['yellowgreen', 'mediumslateblue', 'orchid', 'darkolivegreen', 'darkslateblue', 'darkorchid']
 column_labels = [f'{ambiguity}, p({token})' for token in ['GP', 'non-GP'] for ambiguity in ['Intervention', 'Baseline', 'Random Int.']]
 handles = []
 for i, mean in enumerate(means):

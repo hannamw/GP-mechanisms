@@ -45,7 +45,17 @@ suptitle = fig.suptitle(f'Garden Path Continuation Probabilities ({model_name_ma
 handles = handles[:6]
 labels = [handle.get_label() for handle in handles]
 
-leg = axs[1].legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.1), ncol=3)
+leg = axs[1].legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.1), ncol=3,
+                    frameon=False)
+
+# stylistic details
+for ax in axs:
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['bottom'].set_visible(True)
+    ax.spines['left'].set_visible(True)
+    ax.xaxis.grid(False)
+
 Path(f'behavioral-subplots').mkdir(exist_ok=True, parents=True)
 plt.savefig(f'behavioral-subplots/{model}-behavioral-subplots.pdf', bbox_extra_artists=(leg,suptitle), bbox_inches='tight')
 plt.show()

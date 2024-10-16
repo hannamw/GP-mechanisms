@@ -8,7 +8,7 @@ import torch
 
 sns.set_style("whitegrid")
 
-model_name = 'pythia-70m-deduped'
+model_name = 'gemma-2-2b'
 # model_name = 'gemma-2-2b'
 d = torch.load(f'../results/{model_name}/causal_probabilities.pt')
 
@@ -33,6 +33,7 @@ for struct_mean, structure, ax in zip(means, ['NP/Z', 'NP/S'], axs):
     offsets = [(i-1)* width + (i//2) * extra_offset for i in range(6)]
     #offsets = [(i-1)* width for i in range(6)]
     for i, measurement in enumerate(struct_mean):
+        print(structure, column_labels[i], measurement)
         rects = ax.bar(offsets[i], measurement, width, label=column_labels[i], color=colors[i], edgecolor='black')
         handles.append(rects)
         multiplier += 1
@@ -47,7 +48,16 @@ suptitle = fig.suptitle(f'Garden Path Continuation Probabilities ({model_name_ma
 #ax.set_xticks(x + width * (len(means) - 1)/2, categories)
 handles = handles[:6]
 labels = [handle.get_label() for handle in handles]
-leg = fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.0), ncol=3)
+leg = fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.0), ncol=3,
+                 frameon=False)
+
+# stylistic details
+for ax in axs:
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['bottom'].set_visible(True)
+    ax.spines['left'].set_visible(True)
+    ax.xaxis.grid(False)
 
 Path(f'causal-subplots').mkdir(exist_ok=True, parents=True)
 fig.savefig(f'causal-subplots/{model_name}-causal-subplots.png', bbox_extra_artists=(leg,suptitle),bbox_inches='tight')

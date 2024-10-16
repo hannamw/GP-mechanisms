@@ -21,7 +21,7 @@ width = 0.1  # the width of the bars
 extra_offset = 0.06
 
 
-fig, axs =  plt.subplots(ncols = 2, sharey=True, figsize=(7.5,2.5))
+fig, axs =  plt.subplots(ncols = 2, sharey=True, figsize=(7.5,2.3))
 #colors = ['lightcoral', 'firebrick', 'palegoldenrod', 'goldenrod', 'lightskyblue', 'dodgerblue']
 
 colors = ['lightcoral', 'firebrick', 'gray', 'black', 'lightskyblue', 'dodgerblue']

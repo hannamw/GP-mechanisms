@@ -63,7 +63,7 @@ Path(f'parse-probe-behavioral-comparison').mkdir(exist_ok=True)
 fig.savefig(f'parse-probe-behavioral-comparison/{model_name_noslash}-parse-probe-behavioral-comparison.png', bbox_extra_artists=(leg,),bbox_inches='tight')
 fig.savefig(f'parse-probe-behavioral-comparison/{model_name_noslash}-parse-probe-behavioral-comparison.pdf', bbox_extra_artists=(leg,), bbox_inches='tight')
 # %%
-fig, ax  = plt.subplots(figsize=(6, 2.5))
+fig, ax  = plt.subplots(figsize=(6, 2.3))
 
 for key, data in probs.items():
     condition, sentence_type = key.split('-')
@@ -84,7 +84,7 @@ handles, labels = ax.get_legend_handles_labels()
 # sort both labels and handles by labels
 zipped = list(zip(handles, labels))
 handles, labels = zip(*[zipped[i] for i in [0,3,1,4,2,5]])
-leg = ax.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.2), ncol=3, fancybox=True)
+leg = ax.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.22), ncol=3, fancybox=True)
 
 fig.show()
 Path(f'parse-probe-behavioral').mkdir(exist_ok=True)

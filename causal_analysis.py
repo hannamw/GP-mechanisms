@@ -1,9 +1,9 @@
 #%%
+from argparse import ArgumentParser
 from typing import List, Dict, Iterable, Tuple
 from collections import defaultdict
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 import torch
 from typing import Literal
@@ -11,8 +11,6 @@ from tqdm import tqdm
 from nnsight import LanguageModel
 from transformers import AutoTokenizer
 from huggingface_hub import list_repo_files
-from sae_lens import SAE
-import matplotlib.pyplot as plt
 import seaborn as sns
 
 from dictionary_learning import dictionary
@@ -184,8 +182,10 @@ def load_autoencoder(model_name, submodule_name):
     return ae
 
 if __name__ == '__main__':
-    model_name ="EleutherAI/pythia-70m-deduped"
-    #model_name = "google/gemma-2-2b"
+    parser = ArgumentParser()
+    parser.add_argument('--model_name', type=str, default='EleutherAI/pythia-70m-deduped')
+    args = parser.parse_args()
+    model_name = args.model_name
     model_name_noslash = model_name.split('/')[-1]
     dataset_name = "data_csv/gp_same_len.csv"
     dtype = torch.bfloat16 if model_name.startswith("google/") else torch.float32
@@ -193,7 +193,6 @@ if __name__ == '__main__':
     high_value = 100.0 if 'gemma' in model_name else 2.0
 
     df = pd.read_csv(dataset_name)
-    # tokenizer = AutoTokenizer.from_pretrained(model_name, add_bos_token=False)
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = LanguageModel(model_name, torch_dtype=dtype, device_map="cuda", dispatch=True)
 

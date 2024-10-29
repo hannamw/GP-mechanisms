@@ -63,31 +63,3 @@ for condition in ['NPZ', 'NPS']:
         probs[condition][long_layer] = probe_probs
 
 torch.save(probs, f'results/{model_name_noslash}/parse_probe/probe_probs.pt')
-# %%
-# NOTE: In reality, dimensions 0, 1, and 2 of the probe probs correspond to GEN, LEFT-ARC, and RIGHT-ARC, respectively.
-# But, this is a little confusing: the proper order to feed the representations into the probe is [last, verb], but this is the opposite of how they appear in the sentence! This has to do with the overall parsing algorithm in the context of which the probe is used, I think
-# So, LEFT-ARC means drawing an arc from the verb to the last token, and RIGHT-ARC means drawing an arc from the last token to the verb, the opposite of what you'd expect.
-
-fig, ax  = plt.subplots(figsize=(5, 3))
-
-for condition, data in probs.items():
-    color = 'blue' if condition == 'NPZ' else 'orange'
-    condition_data = torch.stack([data[layer] for layer in ['embed', *(f'resid_{i}' for i in range(6))]], dim=0)
-    mean_data = condition_data.mean(1).numpy()
-    for i, (action, linetype) in enumerate(zip(['GEN', 'RIGHT-ARC', 'LEFT-ARC'], ['-', '--', ':'])):
-        ax.plot(mean_data[:, i], label=f'{condition} {action}', linestyle=linetype, color=color)
-        
-ax.set_xlabel('Layer')
-ax.set_ylabel('Probability')
-ax.set_xticks(list(range(7)), ['embeds', *(str(x) for x in range(6))])
-ax.set_title('Probe Action Probabilities')
-handles, labels = ax.get_legend_handles_labels()
-# sort both labels and handles by labels
-zipped = list(zip(handles, labels))
-handles, labels = zip(*[zipped[i] for i in [0,3,1,4,2,5]])
-leg = ax.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.2), ncol=3, fancybox=True)
-
-fig.show()
-fig.savefig(f'results/{model_name_noslash}/parse_probe/probe_probs.png', bbox_extra_artists=(leg,),bbox_inches='tight')
-fig.savefig(f'results/{model_name_noslash}/parse_probe/probe_probs.pdf', bbox_extra_artists=(leg,), bbox_inches='tight')
-# %%

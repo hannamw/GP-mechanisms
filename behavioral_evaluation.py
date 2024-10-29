@@ -1,12 +1,15 @@
 #%%
+from argparse import ArgumentParser
 from pathlib import Path
 import pandas as pd 
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 #%%
+parser = ArgumentParser()
+parser.add_argument('--model_name', type=str, default='EleutherAI/pythia-70m-deduped')
+args = parser.parse_args()
 df = pd.read_csv('data_csv/gp_same_len.csv')
-model_name = 'EleutherAI/pythia-70m-deduped'
-model_name = 'google/gemma-2-2b'
+model_name = args.model_name
 save_name = model_name.split('/')[-1]
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)

@@ -6,6 +6,7 @@ import torch
 #%%
 df = pd.read_csv('data_csv/gp_same_len.csv')
 model_name = 'EleutherAI/pythia-70m-deduped'
+model_name = 'google/gemma-2-2b'
 save_name = model_name.split('/')[-1]
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)

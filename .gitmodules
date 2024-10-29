@@ -1,3 +1,6 @@
 [submodule "feature-circuits-gp"]
 	path = feature-circuits-gp
 	url = git@github.com:hannamw/feature-circuits-gp.git
+[submodule "incremental_parse_probe"]
+	path = incremental_parse_probe
+	url = git@github.com:hannamw/incremental_parse_probe.git

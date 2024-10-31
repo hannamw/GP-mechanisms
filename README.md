@@ -25,7 +25,7 @@ To replicate the results of the paper, please do the following. Note that these 
    1. (Optional) First, train the structural probes on `pythia-70m-deduped`.
       1. For this, you will need (our fork of) `incremental_parse_probe`. Go to that fork, and create a new conda environment based on the `environment.yml` file there.
       2. Get a copy of Penn TreeBank, and put it in `incremental_parse_probe`.
-      3. Generate the data splits by running `incremental_parse_probe/convert_splits_to_depparse.sh`.
+      3. Generate the data splits by running `incremental_parse_probe/convert_splits_to_depparse.sh`. Then follow the steps in the *Preprocessing* section of that repo's README (involves using Stanford CoreNLP + Java and is rather complicated).
       4. Finally, run `incremental_parse_probe/inter_train_pythia_deduped.sh`.
       5. Copy the last checkpoint of each probe (in `incremental_parse_probe/experiment_checkpoints/eval/pythia-70m-deduped/StackActionProbe/layer_<layer>`) into `standalone_probes`. The probes should be named `embeddings.pt`, `layer0.pt`, ..., `layer5.pt`; note that `embeddings` corresponds to `layer_0` in the `experiment_checkpoints` folder.
    2. (Optional, Figure 14) Second, evaluate the probes by running `incremental_parse_probe/iter_eval_pythia_deduped.sh`. Copy the files in `incremental_parse_probe/results` to `results/pythia-70m-deduped/parse_probe/performance/`.

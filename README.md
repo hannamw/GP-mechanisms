@@ -17,7 +17,7 @@ To replicate the results of the paper, please do the following. Note that these 
    3. Run `feature-circuits-gp/scripts/get_circuit_garden_path.sh`. The annotation of each figure comes from the annotation file `feature-circuits-gp/annotations/pythia-70m-deduped.jsonl`. Figures 9-12 will be output in `feature-circuits-gp/circuits/figures`; however, note that our Figure 3 was constructed manually.
       1. The same script can be run for Gemma (just change the model in the script, but also consider changing the batch size). These SAEs will download automatically, but be forewarned that they are large.
    4. Use the notebook `annotate_dashboard.ipynb` to annotate the features manually. Note that you'll have to add your own Neuronpedia API key to do so.
-   5. To compute faithfulness, please use `feature-circuits-gp/scripts/get_circuit_garden_path.sh`. **Aaron please add the command-line arguments corresponding to what's in the paper**
+   5. To compute faithfulness, please use `feature-circuits-gp/scripts/evaluate_circuit.sh`.  
 4. (Section 4.3, Figure 4): Run `python causal_analysis.py`. For results with Gemma (Section D.1, Figure 8), run `python causal_analysis.py --model_name google/gemma-2-2b`. Note that this depends on the files `results/<model>/npz_features.csv` and `results/<model>/npz_features.csv`, which we crafted manually.
    1. (Appendix C, Figure 6) For large-scale results, first download [this file from the SAP Benchmark](https://github.com/caplabnyu/sapbenchmark/blob/main/Surprisals/data/items_ClassicGP.csv) to `data_csv`. Then run `python causal_analysis_largescale.py` (`pythia-70m-deduped` only).
 5. (Section 5.1): Run `get_compare_activations.py` to get the values discussed in the paper (`pythia-70m-deduped` only).
@@ -31,8 +31,8 @@ To replicate the results of the paper, please do the following. Note that these 
    2. (Optional, Figure 14) Second, evaluate the probes by running `incremental_parse_probe/iter_eval_pythia_deduped.sh`. Copy the files in `incremental_parse_probe/results` to `results/pythia-70m-deduped/parse_probe/performance/`.
    3. (Figure 5, Appendix F, Figure 15): Run `parseprobe_behavior.py`.
    4. (Appendix F.4, Figure 16): Run `parseprobe_attribution.py`
-7. (Section 6.1, Table 4): **Aaron, can you add a description of how to perform the RC behavioral eval, as well as the behavioral eval script and pointers to the necessary data here?**
-8. (Section 6.2): **Aaron, can you add a description of how to perform attribution, the attribution script, and the Pythia annotations? I guess we also need the feature overlap stuff.**
+7. (Section 6.1, Table 4): To evaluate on the reading comprehension questions, use the `readingcomp_evaluation.py` script. By default, this will evaluate Gemma 2 (2B) on `data_csv/garden_path_samelen_readingcomp.csv`. Use the `--model` argument to change the model (this takes a HuggingFace model identifier) or the `--data` argument to change the dataset to a different .csv from `data_csv/`.
+8. (Section 6.2): To discover a feature circuit for reading comprehension, use `feature-circuits-gp/scripts/get_circuit_garden_path.sh`, but using the garden path sentences as the data. To compute feature overlaps, use `feature-circuits-gp/feature_overlap.py`. This script takes in the nodes from two circuits discovered using the circuit discovery scripts in `feature-circuits-gp/scripts/`. Only the nodes are needed for this analysis.
 
 ### Create Plots
 
@@ -52,6 +52,7 @@ As part of this project, we created the following data files:
 
 - `data_csv/gp_same_len.csv`: An edit of Arehalli et al.'s (2022) dataset containing both ambiguous and unambiguous sentences, all of the same length. Note that our unambiguous sentences are unambiguous because of the verb used not, e.g. because of an added comma.
 - `data_csv/garden_path_readingcomp.csv`: An adaptation of the above dataset containing complete garden path sentences and follow-up questions.
+- `data_csv/garden_path_samelen_readingcomp.csv`: A version of the above dataset containing garden path sentences that each contain the same number of words. This version of the dataset enables us to analyze which sparse features are most influential at specific token positions.
 
 ## Citation
 
@@ -59,4 +60,4 @@ Coming soon!
 
 ## License
 
-**Aaron do you know anything about licensing stuff?**
+We release our materials under an MIT license.

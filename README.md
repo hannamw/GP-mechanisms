@@ -21,7 +21,7 @@ To replicate the results of the paper, please do the following. Note that these 
 4. (Section 4.3, Figure 4): Run `python causal_analysis.py`. For results with Gemma (Section D.1, Figure 8), run `python causal_analysis.py --model_name google/gemma-2-2b`. Note that this depends on the files `results/<model>/npz_features.csv` and `results/<model>/npz_features.csv`, which we crafted manually.
    1. (Appendix C, Figure 6) For large-scale results, first download [this file from the SAP Benchmark](https://github.com/caplabnyu/sapbenchmark/blob/main/Surprisals/data/items_ClassicGP.csv) to `data_csv`. Then run `python causal_analysis_largescale.py` (`pythia-70m-deduped` only).
 5. (Section 5.1): Run `get_compare_activations.py` to get the values discussed in the paper (`pythia-70m-deduped` only).
-6. (Section 5.2): We provide the probes trained on `pythia-70m-deduped` needed for the structural probing experiments, so feel free to skip steps 1 and 2.
+6. (Section 5.2): We provide the probes trained on `pythia-70m-deduped` needed for the structural probing experiments at [this link](https://surfdrive.surf.nl/files/index.php/s/FksPx78imBQKKrn); you just need to download the probes and put them in a folder called `standalone_probes`. So, feel free to do that and skip steps 1 and 2.
    1. (Optional) First, train the structural probes on `pythia-70m-deduped`.
       1. For this, you will need (our fork of) `incremental_parse_probe`. Go to that fork, and create a new conda environment based on the `environment.yml` file there.
       2. Get a copy of Penn TreeBank, and put it in `incremental_parse_probe`.

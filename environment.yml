@@ -200,7 +200,6 @@ dependencies:
       - automated-interpretability==0.0.6
       - babe==0.0.7
       - babel==2.15.0
-      - baukit==0.0.1
       - beartype==0.14.1
       - beautifulsoup4==4.12.3
       - better-abc==0.0.3
@@ -316,7 +315,6 @@ dependencies:
       - pytest-profiling==1.7.0
       - python-dotenv==1.0.1
       - python-engineio==4.9.1
-      - python-graphviz==0.20.3
       - python-json-logger==2.0.7
       - python-socketio==5.11.3
       - pytz==2024.1
@@ -375,4 +373,3 @@ dependencies:
       - xxhash==3.4.1
       - yarl==1.9.4
       - zstandard==0.22.0
-prefix: /home/Ubuntu/miniconda3/envs/circuits
